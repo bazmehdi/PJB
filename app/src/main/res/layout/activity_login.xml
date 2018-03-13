@@ -11,7 +11,8 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:textColorHint="@android:color/background_light">
 
         <AutoCompleteTextView
             android:id="@+id/login_email"
@@ -23,6 +24,7 @@
             android:fontFamily="@font/fredoka_one"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
+            android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             android:textSize="18sp" />
 
@@ -50,7 +52,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="125dp"
         android:layout_gravity="center_horizontal">
 
         <android.support.v7.widget.AppCompatButton
@@ -64,6 +66,20 @@
             android:fontFamily="@font/fredoka_one"
             android:padding="12dp"
             android:text="@string/login_btn" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="registerNewUser"
+            android:text="@string/login_register"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </LinearLayout>
