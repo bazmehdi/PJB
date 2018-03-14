@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "385090305994",
+    "firebase_url": "https://paajeebakers-0202.firebaseio.com",
+    "project_id": "paajeebakers-0202",
+    "storage_bucket": "paajeebakers-0202.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385090305994:android:8e4823dbe2136fd4",
+        "android_client_info": {
+          "package_name": "com.bazmehdi.pjb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385090305994-iumo547r8u3j1ajbvlicar0dt11dtnek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdpp73cqaKLCc0GHwCCevw0D22KlH83qI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

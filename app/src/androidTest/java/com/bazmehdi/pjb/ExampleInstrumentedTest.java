@@ -1,4 +1,4 @@
-package com.paajeebakers.pjb;
+package com.bazmehdi.pjb;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

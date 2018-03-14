@@ -1,6 +1,5 @@
-package com.paajeebakers.pjb;
+package com.bazmehdi.pjb;
 
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -11,18 +10,18 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
-    private AutoCompleteTextView EmailView;
-    private EditText PasswordView;
+    private AutoCompleteTextView memberEmailView;
+    private EditText memberPasswordView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EmailView = findViewById(R.id.login_email);
-        PasswordView = findViewById(R.id.login_password);
+        memberEmailView = findViewById(R.id.login_email);
+        memberPasswordView = findViewById(R.id.login_password);
 
-        PasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        memberPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == R.integer.login || i == EditorInfo.IME_NULL) {

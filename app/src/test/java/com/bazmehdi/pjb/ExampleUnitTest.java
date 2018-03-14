@@ -1,4 +1,4 @@
-package com.paajeebakers.pjb;
+package com.bazmehdi.pjb;
 
 import org.junit.Test;
 
