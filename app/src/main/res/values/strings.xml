@@ -11,4 +11,18 @@
     <string name="error_invalid_password">Password too short or does not match</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+
+    <!--string drawer menu-->
+    <string name="menu_location">Location</string>
+    <string name="menu_new">New Items</string>
+    <string name="menu_promotions">Promotions</string>
+
+    <string name="menu_clothing">Clothing</string>
+    <string name="menu_shoes">Shoes</string>
+    <string name="menu_watches">Watches</string>
+    <string name="menu_accessories">Accessories</string>
+    <string name="menu_bags">Bags</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
 </resources>
