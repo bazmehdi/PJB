@@ -3,4 +3,13 @@
     <color name="colorPrimary">#f8a30f</color>
     <color name="colorPrimaryDark">#F8530F</color>
     <color name="colorAccent">#212121</color>
+    <color name="colorAccentLight">#383838</color>
+
+    <color name="grey_hard">#96989A</color>
+    <color name="grey_medium">#BDBFC1</color>
+    <color name="grey_soft">#F5F5F5</color>
+
+    <color name="grey_bg">#E6E6E6</color>
+    <color name="grey_text">#222D31</color>
+    <color name="tab_indicator_color">#FFFFFF</color>
 </resources>

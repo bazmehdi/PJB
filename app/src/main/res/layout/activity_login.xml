@@ -4,7 +4,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context=".Login">
 
@@ -76,7 +76,6 @@
             android:layout_gravity="center_horizontal"
             android:onClick="registerNewUser"
             android:text="@string/login_register"
-            android:textAlignment="viewStart"
             android:textColor="@android:color/background_light"
             android:textStyle="bold" />
 
