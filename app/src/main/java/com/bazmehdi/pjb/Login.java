@@ -22,18 +22,18 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private AutoCompleteTextView memberEmailView;
-    private EditText memberPasswordView;
+    private AutoCompleteTextView mEmailView;
+    private EditText mPasswordView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        memberEmailView = findViewById(R.id.login_email);
-        memberPasswordView = findViewById(R.id.login_password);
+        mEmailView = findViewById(R.id.login_email);
+        mPasswordView = findViewById(R.id.login_password);
 
-        memberPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == R.integer.login || i == EditorInfo.IME_NULL) {
@@ -65,8 +65,8 @@ public class Login extends AppCompatActivity {
     // TODO: Complete the attemptLogin() method
     private void attemptLogin() {
 
-        String email = memberEmailView.getText().toString();
-        String password = memberPasswordView.getText().toString();
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
 
         if (email.isEmpty())
             if (email.equals("") || password.equals("")) return;
