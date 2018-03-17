@@ -5,45 +5,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_location"
-            android:icon="@drawable/ic_nav_cart"
-            android:title="@string/menu_location"
+            android:icon="@drawable/ic_my_location"
+            android:title="@string/menu_location" />
+        <item
+            android:id="@+id/nav_cart"
+            android:checked="true"
+            android:icon="@drawable/ic_shopping_cart"
+            android:title="@string/menu_cart"
             app:actionLayout="@layout/menu_counter" />
         <item
             android:id="@+id/nav_account"
-            android:checked="true"
-            android:icon="@drawable/ic_nav_new"
-            android:title="@string/menu_new" />
-        <item
-            android:id="@+id/nav_promo"
-            android:icon="@drawable/ic_nav_promotion"
-            android:title="@string/menu_promotions"/>
+            android:icon="@drawable/ic_person"
+            android:title="@string/menu_account" />
 
     </group>
 
-    <item android:title="Category" >
+    <item android:title="@string/menu_title">
         <menu>
-            <group
-                android:checkableBehavior="single">
+            <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_savoury"
-                    android:icon="@drawable/ic_nav_clothing"
-                    android:title="@string/menu_clothing" />
+                    android:id="@+id/nav_cat1"
+
+                    android:title="@string/menu_cat1" />
                 <item
-                    android:id="@+id/nav_shoes"
-                    android:icon="@drawable/ic_nav_shoes"
-                    android:title="@string/menu_shoes"/>
+                    android:id="@+id/nav_cat2"
+
+                    android:title="@string/menu_cat2" />
                 <item
-                    android:id="@+id/nav_watches"
-                    android:icon="@drawable/ic_nav_watches"
-                    android:title="@string/menu_watches"/>
+                    android:id="@+id/nav_cat3"
+
+                    android:title="@string/menu_cat3" />
                 <item
-                    android:id="@+id/nav_accessories"
-                    android:icon="@drawable/ic_nav_accessories"
-                    android:title="@string/menu_accessories"/>
+                    android:id="@+id/nav_cat4"
+
+                    android:title="@string/menu_cat4" />
                 <item
-                    android:id="@+id/nav_bags"
-                    android:icon="@drawable/ic_nav_bags"
-                    android:title="@string/menu_bags"/>
+                    android:id="@+id/nav_cat5"
+
+                    android:title="@string/menu_cat5" />
             </group>
         </menu>
     </item>
@@ -54,7 +53,7 @@
     <!--Clothing-->
     <!--Shoes-->
     <!--Watches-->
-    <!--Acessories-->
+    <!--Accessories-->
     <!--Bags-->
 
 </menu>

@@ -5,7 +5,7 @@
     <string name="password_hint">Password</string>
     <string name="confirm_password_hint">Confirm Password</string>
     <string name="login_btn">Login</string>
-    <string name="login_register">Don't have an account? Register here!</string>
+    <string name="login_register">Don\'t have an account? Register here!</string>
     <string name="register_btn">Sign Up</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">Password too short or does not match</string>
@@ -13,15 +13,16 @@
     <string name="error_field_required">This field is required</string>
 
     <!--string drawer menu-->
+    <string name="menu_title">Categories</string>
     <string name="menu_location">Location</string>
-    <string name="menu_new">New Items</string>
-    <string name="menu_promotions">Promotions</string>
+    <string name="menu_cart">Cart</string>
+    <string name="menu_account">Account</string>
 
-    <string name="menu_clothing">Clothing</string>
-    <string name="menu_shoes">Shoes</string>
-    <string name="menu_watches">Watches</string>
-    <string name="menu_accessories">Accessories</string>
-    <string name="menu_bags">Bags</string>
+    <string name="menu_cat1">Savoury</string>
+    <string name="menu_cat2">Sweet</string>
+    <string name="menu_cat3">Pastries</string>
+    <string name="menu_cat4">Cakes</string>
+    <string name="menu_cat5">Biscuits</string>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
