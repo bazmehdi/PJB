@@ -47,6 +47,14 @@
         </menu>
     </item>
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_signOut"
+
+            android:title="@string/menu_signOut" />
+
+    </group>
+
     <!--New Item-->
     <!--Promo-->
 

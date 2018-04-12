@@ -24,6 +24,8 @@
     <string name="menu_cat4">Cakes</string>
     <string name="menu_cat5">Biscuits</string>
 
+    <string name="menu_signOut">Sign Out</string>
+
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 

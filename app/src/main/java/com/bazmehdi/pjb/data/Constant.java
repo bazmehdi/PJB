@@ -8,6 +8,7 @@ import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.ItemModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -31,14 +32,17 @@ public class Constant {
     private static Random rnd = new Random();
     public static List<ItemModel> getItemCat1(Context ctx) {
         List<ItemModel> items = new ArrayList<>();
-        TypedArray img_c_m = ctx.getResources().obtainTypedArray(R.array.item_clothing_male);
-        String[] name_m = ctx.getResources().getStringArray(R.array.str_clothing_male);
-        String[] prc_m = ctx.getResources().getStringArray(R.array.prc_clothing_male);
-        List<Integer> img_mix = mixImg(img_c_f, img_c_m);
-        List<String> name_mix = mixStr(name_f, name_m);
-        List<String> prc_mix = mixStr(prc_f, prc_m);
-        for (int i = 0; i < img_mix.size() ; i++) {
-            ItemModel item = new ItemModel( Long.parseLong("1"+i), img_mix.get(i), name_mix.get(i), Long.parseLong(prc_mix.get(i)), ctx.getString(R.string.menu_clothing), getRandomLikes());
+        TypedArray img_cat1 = ctx.getResources().obtainTypedArray(R.array.item_cat1);
+        String[] name = ctx.getResources().getStringArray(R.array.str_cat1);
+        String[] prc = ctx.getResources().getStringArray(R.array.prc_cat1);
+        List<Integer> img_cat_list = Arrays.asList(img_cat1);
+        List<String> name_list = Arrays.asList(name);
+        List<String> prc_list = Arrays.asList(prc);
+        //List<Integer> img_mix = mixImg(img_c_f, img_c_m);
+        //List<String> name_mix = mixStr(name_f, name_m);
+        //List<String> prc_mix = mixStr(prc_f, prc_m);
+        for (int i = 0; i < img_cat1.length() ; i++) {
+            ItemModel item = new ItemModel( Long.parseLong("1"+i), img_cat1.get(i), name_list.get(i), Long.parseLong(prc_list.get(i)), ctx.getString(R.string.menu_cat1));
             items.add(item);
         }
         Collections.shuffle(items, rnd);

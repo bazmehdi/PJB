@@ -162,6 +162,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 break;
+
+            //sign out menu
+            case R.id.nav_signOut:
+                fragment = new CategoryFragment();
+                bundle.putString(CategoryFragment.TAG_CATEGORY, title);
+                break;
         }
 
         fragment.setArguments(bundle);
