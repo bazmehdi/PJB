@@ -10,16 +10,26 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
-import com.bazmehdi.pjb.ActivityItemDetails;
+import com.bazmehdi.pjb.ItemDetails;
 import com.bazmehdi.pjb.MainActivity;
 import com.bazmehdi.pjb.R;
-import com.bazmehdi.pjb.ItemGridAdapter;
+import com.bazmehdi.pjb.adapter.ItemGridAdapter;
 import com.bazmehdi.pjb.data.Constant;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +43,10 @@ public class CategoryFragment extends Fragment {
     private LinearLayout lyt_notfound;
     private String category = "";
 
+    private DatabaseReference mDatabaseReference;
+    private ArrayList<String> mItems = new ArrayList<>();
+    private ListView mListView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,10 +58,55 @@ public class CategoryFragment extends Fragment {
         LinearLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), Tools.getGridSpanCount(getActivity()));
         recyclerView.setLayoutManager(mLayoutManager);
 
+
+
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+
+        mListView = (ListView) view.findViewById(R.id.recyclerView);
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, mItems);
+
+        mListView.setAdapter(arrayAdapter);
+
+        mDatabaseReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                String value = dataSnapshot.getValue(String.class);
+
+                mItems.add(value);
+
+                arrayAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
         //set data and list adapter
         List<ItemModel> items = new ArrayList<>();
         if(category.equals(getString(R.string.menu_cat1))){
-            items = Constant.getItemClothes(getActivity());
+            items = Constant.getItemCat1(getActivity());
         }else if(category.equals(getString(R.string.menu_cat2))){
             items = Constant.getItemShoes(getActivity());
         }else if(category.equals(getString(R.string.menu_cat3))){
@@ -63,7 +122,7 @@ public class CategoryFragment extends Fragment {
         mAdapter.setOnItemClickListener(new ItemGridAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, ItemModel obj, int position) {
-                ActivityItemDetails.navigate((ActivityMain)getActivity(), v.findViewById(R.id.lyt_parent), obj);
+                ItemDetails.navigate((MainActivity)getActivity(), v.findViewById(R.id.lyt_parent), obj);
             }
         });
 
@@ -79,4 +138,4 @@ public class CategoryFragment extends Fragment {
     public void onResume() {
         mAdapter.notifyDataSetChanged();
         super.onResume();
-    }
+    }}

@@ -13,6 +13,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 @SuppressWarnings("ResourceType")
 public class Constant {
     public static float getAPIVerison() {
@@ -32,6 +38,8 @@ public class Constant {
     private static Random rnd = new Random();
     public static List<ItemModel> getItemCat1(Context ctx) {
         List<ItemModel> items = new ArrayList<>();
+
+
         TypedArray img_cat1 = ctx.getResources().obtainTypedArray(R.array.item_cat1);
         String[] name = ctx.getResources().getStringArray(R.array.str_cat1);
         String[] prc = ctx.getResources().getStringArray(R.array.prc_cat1);
@@ -43,78 +51,6 @@ public class Constant {
         //List<String> prc_mix = mixStr(prc_f, prc_m);
         for (int i = 0; i < img_cat1.length() ; i++) {
             ItemModel item = new ItemModel( Long.parseLong("1"+i), img_cat1.get(i), name_list.get(i), Long.parseLong(prc_list.get(i)), ctx.getString(R.string.menu_cat1));
-            items.add(item);
-        }
-        Collections.shuffle(items, rnd);
-        return items;
-    }
-    public static List<ItemModel> getItemCat2(Context ctx) {
-        List<ItemModel> items = new ArrayList<>();
-        TypedArray img_c_f = ctx.getResources().obtainTypedArray(R.array.item_shoes_female);
-        TypedArray img_c_m = ctx.getResources().obtainTypedArray(R.array.item_shoes_male);
-        String[] name_f = ctx.getResources().getStringArray(R.array.str_shoes_female);
-        String[] name_m = ctx.getResources().getStringArray(R.array.str_shoes_male);
-        String[] prc_f = ctx.getResources().getStringArray(R.array.prc_shoes_female);
-        String[] prc_m = ctx.getResources().getStringArray(R.array.prc_shoes_male);
-        List<String> name_mix = mixStr(name_f, name_m);
-        List<String> prc_mix = mixStr(prc_f, prc_m);
-        List<Integer> img_mix = mixImg(img_c_f, img_c_m);
-        for (int i = 0; i < img_mix.size() ; i++) {
-            ItemModel item = new ItemModel( Long.parseLong("2"+i), img_mix.get(i), name_mix.get(i), Long.parseLong(prc_mix.get(i)), ctx.getString(R.string.menu_shoes), getRandomLikes());
-            items.add(item);
-        }
-        Collections.shuffle(items, rnd);
-        return items;
-    }
-    public static List<ItemModel> getItemCat3(Context ctx) {
-        List<ItemModel> items = new ArrayList<>();
-        TypedArray img_c_f = ctx.getResources().obtainTypedArray(R.array.item_watches_female);
-        TypedArray img_c_m = ctx.getResources().obtainTypedArray(R.array.item_watches_male);
-        String[] name_f = ctx.getResources().getStringArray(R.array.str_watches_female);
-        String[] name_m = ctx.getResources().getStringArray(R.array.str_watches_male);
-        String[] prc_f = ctx.getResources().getStringArray(R.array.prc_watches_female);
-        String[] prc_m = ctx.getResources().getStringArray(R.array.prc_watches_male);
-        List<String> name_mix = mixStr(name_f, name_m);
-        List<String> prc_mix = mixStr(prc_f, prc_m);
-        List<Integer> img_mix = mixImg(img_c_f, img_c_m);
-        for (int i = 0; i < img_mix.size() ; i++) {
-            ItemModel item = new ItemModel( Long.parseLong("3"+i), img_mix.get(i), name_mix.get(i), Long.parseLong(prc_mix.get(i)), ctx.getString(R.string.menu_watches), getRandomLikes());
-            items.add(item);
-        }
-        Collections.shuffle(items, rnd);
-        return items;
-    }
-    public static List<ItemModel> getItemCat4(Context ctx) {
-        List<ItemModel> items = new ArrayList<>();
-        TypedArray img_c_f = ctx.getResources().obtainTypedArray(R.array.item_acc_female);
-        TypedArray img_c_m = ctx.getResources().obtainTypedArray(R.array.item_acc_male);
-        String[] name_f = ctx.getResources().getStringArray(R.array.str_acc_female);
-        String[] name_m = ctx.getResources().getStringArray(R.array.str_acc_male);
-        String[] prc_f = ctx.getResources().getStringArray(R.array.prc_acc_female);
-        String[] prc_m = ctx.getResources().getStringArray(R.array.prc_acc_male);
-        List<String> name_mix = mixStr(name_f, name_m);
-        List<String> prc_mix = mixStr(prc_f, prc_m);
-        List<Integer> img_mix = mixImg(img_c_f, img_c_m);
-        for (int i = 0; i < img_mix.size() ; i++) {
-            ItemModel item = new ItemModel( Long.parseLong("4"+i), img_mix.get(i), name_mix.get(i), Long.parseLong(prc_mix.get(i)), ctx.getString(R.string.menu_accessories), getRandomLikes());
-            items.add(item);
-        }
-        Collections.shuffle(items, rnd);
-        return items;
-    }
-    public static List<ItemModel> getItemCat5(Context ctx) {
-        List<ItemModel> items = new ArrayList<>();
-        TypedArray img_c_f = ctx.getResources().obtainTypedArray(R.array.item_bags_female);
-        TypedArray img_c_m = ctx.getResources().obtainTypedArray(R.array.item_bags_male);
-        String[] name_f = ctx.getResources().getStringArray(R.array.str_bags_female);
-        String[] name_m = ctx.getResources().getStringArray(R.array.str_bags_male);
-        String[] prc_f = ctx.getResources().getStringArray(R.array.prc_bags_female);
-        String[] prc_m = ctx.getResources().getStringArray(R.array.prc_bags_male);
-        List<String> name_mix = mixStr(name_f, name_m);
-        List<String> prc_mix = mixStr(prc_f, prc_m);
-        List<Integer> img_mix = mixImg(img_c_f, img_c_m);
-        for (int i = 0; i < img_mix.size(); i++) {
-            ItemModel item = new ItemModel(Long.parseLong("5" + i), img_mix.get(i), name_mix.get(i), Long.parseLong(prc_mix.get(i)), ctx.getString(R.string.menu_bags), getRandomLikes());
             items.add(item);
         }
         Collections.shuffle(items, rnd);
@@ -153,4 +89,4 @@ public class Constant {
     }
     public static String getRandomReviews(){
         return getRandomIndex(rnd, 0, 800)+" Reviews";
-    }
+    }}

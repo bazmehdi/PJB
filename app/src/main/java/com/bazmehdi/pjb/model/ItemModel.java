@@ -31,7 +31,7 @@ public class ItemModel implements Serializable{
     }
 
     public String getStrPrice() {
-        return "$ "+getPrice();
+        return "£ " + getPrice();
     }
 
     public long getPrice() {
