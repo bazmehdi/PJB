@@ -35,7 +35,7 @@ import com.bazmehdi.pjb.widget.DividerItemDecoration;
 
 public class ItemDetails extends AppCompatActivity {
 
-    public static final String EXTRA_OBJCT = "com.app.sample.shop.ITEM";
+    public static final String EXTRA_OBJCT = "com.bazmehdi.pjb.ITEM";
 
     // give preparation animation activity transition
     public static void navigate(AppCompatActivity activity, View transitionImage, ItemModel obj) {
