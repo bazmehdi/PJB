@@ -81,6 +81,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="false"
             android:fontFamily="@font/fredoka_one"
+            android:onClick="signUp"
             android:padding="12dp"
             android:text="@string/register_btn" />
 
