@@ -10,9 +10,7 @@ public class ItemModel implements Serializable{
     String category;
     int total=1;
 
-    public ItemModel(){
-
-    }
+    public ItemModel(){ }
 
     public ItemModel(long id, int img, String name, long price, String category) {
         this.id = id;

@@ -12,13 +12,13 @@ import com.bazmehdi.pjb.model.ItemModel;
 
 import java.util.List;
 
-public class ItemsList extends RecyclerView.Adapter<ItemsList.MyViewHolder> {
+public class ItemsListAdapter extends RecyclerView.Adapter<ItemsListAdapter.MyViewHolder> {
 
     private LayoutInflater inflater;
     private Context context;
     List<ItemModel> itemList;
 
-    public ItemsList(Context context, List<ItemModel> itemList) {
+    public ItemsListAdapter(Context context, List<ItemModel> itemList) {
         inflater = LayoutInflater.from(context);
         this.context = context;
         this.itemList=itemList;
@@ -33,8 +33,8 @@ public class ItemsList extends RecyclerView.Adapter<ItemsList.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.textViewName.setText(String.valueOf(itemList.get(position)));
-        holder.textViewCategory.setText(String.valueOf(itemList.get(position)));
+        holder.textViewName.setText(String.valueOf(itemList.get(position).getName()));
+        holder.textViewCategory.setText(String.valueOf(itemList.get(position).getCategory()));
     }
 
     @Override
