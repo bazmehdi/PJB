@@ -38,8 +38,8 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_category, null);
         category = getArguments().getString(TAG_CATEGORY);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        lyt_notfound = (LinearLayout) view.findViewById(R.id.lyt_notfound);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        lyt_notfound = view.findViewById(R.id.lyt_notfound);
 
         LinearLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), Tools.getGridSpanCount(getActivity()));
         recyclerView.setLayoutManager(mLayoutManager);

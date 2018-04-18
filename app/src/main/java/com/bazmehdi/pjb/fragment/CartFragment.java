@@ -94,7 +94,7 @@ public class CartFragment extends Fragment {
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         ((TextView) dialog.findViewById(R.id.title)).setText(model.getName());
-        final TextView qty = (TextView) dialog.findViewById(R.id.quantity);
+        final TextView qty = dialog.findViewById(R.id.quantity);
         qty.setText(model.getTotal() + "");
         (dialog.findViewById(R.id.img_decrease)).setOnClickListener(new View.OnClickListener() {
             @Override

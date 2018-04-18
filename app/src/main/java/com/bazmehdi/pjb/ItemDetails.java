@@ -163,7 +163,7 @@ public class ItemDetails extends AppCompatActivity {
         CartListAdapter mAdapter = new CartListAdapter(this, global.getCart());
         recyclerView.setAdapter(mAdapter);
         ((TextView)dialog.findViewById(R.id.item_total)).setText(" - " + global.getCartItemTotal() + " Items");
-        ((TextView)dialog.findViewById(R.id.price_total)).setText(" $ " + global.getCartPriceTotal());
+        ((TextView)dialog.findViewById(R.id.price_total)).setText(" £ " + global.getCartPriceTotal());
         (dialog.findViewById(R.id.img_close)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
