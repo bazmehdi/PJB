@@ -44,13 +44,12 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // TODO: Grab an instance of FirebaseAuth
+        // Grab an instance of FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
     }
 
     // Executed when Sign in button pressed
     public void signInExistingUser(View v)   {
-        // TODO: Call attemptLogin() here
         attemptLogin();
     }
 
@@ -61,7 +60,7 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // TODO: Complete the attemptLogin() method
+    // Complete the attemptLogin() method
     private void attemptLogin() {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
@@ -70,7 +69,7 @@ public class Login extends AppCompatActivity {
             if (email.equals("") || password.equals("")) return;
         Toast.makeText(this, "Login in progress...", Toast.LENGTH_SHORT).show();
 
-        // TODO: Use FirebaseAuth to sign in with email & password
+        // Use FirebaseAuth to sign in with email & password
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -89,7 +88,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    // TODO: Show error on screen with an alert dialog
+    // Show error on screen with an alert dialog
     private void showErrorDialog(String message) {
         new AlertDialog.Builder(this)
                 .setTitle("Error")
