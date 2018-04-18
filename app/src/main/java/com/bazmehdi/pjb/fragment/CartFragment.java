@@ -40,10 +40,10 @@ public class CartFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_cart, null);
         global = (GlobalVariable) getActivity().getApplication();
 
-        item_total = (TextView) view.findViewById(R.id.item_total);
-        price_total = (TextView) view.findViewById(R.id.price_total);
-        lyt_notfound = (LinearLayout) view.findViewById(R.id.lyt_notfound);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        item_total = view.findViewById(R.id.item_total);
+        price_total = view.findViewById(R.id.price_total);
+        lyt_notfound = view.findViewById(R.id.lyt_notfound);
+        recyclerView = view.findViewById(R.id.recyclerView);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
@@ -59,7 +59,7 @@ public class CartFragment extends Fragment {
             }
         });
 
-        ((Button) view.findViewById(R.id.bt_checkout)).setOnClickListener(new View.OnClickListener() {
+        (view.findViewById(R.id.bt_checkout)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mAdapter.getItemCount() != 0) {
@@ -80,7 +80,7 @@ public class CartFragment extends Fragment {
 
     private void setTotalPrice() {
         item_total.setText(" - " + global.getCartItemTotal() + " Items");
-        price_total.setText(" $ " + global.getCartPriceTotal());
+        price_total.setText(" £ " + global.getCartPriceTotal());
     }
 
     private void dialogCartAction(final ItemModel model, final int position) {
@@ -96,7 +96,7 @@ public class CartFragment extends Fragment {
         ((TextView) dialog.findViewById(R.id.title)).setText(model.getName());
         final TextView qty = (TextView) dialog.findViewById(R.id.quantity);
         qty.setText(model.getTotal() + "");
-        ((ImageView) dialog.findViewById(R.id.img_decrease)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.img_decrease)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (model.getTotal() > 1) {
@@ -105,14 +105,14 @@ public class CartFragment extends Fragment {
                 }
             }
         });
-        ((ImageView) dialog.findViewById(R.id.img_increase)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.img_increase)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 model.setTotal(model.getTotal() + 1);
                 qty.setText(model.getTotal() + "");
             }
         });
-        ((Button) dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 global.updateItemTotal(model);
@@ -121,7 +121,7 @@ public class CartFragment extends Fragment {
                 dialog.dismiss();
             }
         });
-        ((Button) dialog.findViewById(R.id.bt_remove)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.bt_remove)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 global.removeCart(model);

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+    \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+    <string name="short_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="middle_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+    <string name="long_lorem_ipsum">
+        Duis tellus metus, elementum a lectus id, aliquet interdum mauris. Nam bibendum efficitur sollicitudin. Proin eleifend libero velit, nec fringilla dolor finibus quis. nMorbi eu libero pellentesque, rutrum metus quis, blandit est. Fusce bibendum accumsan nisi vulputate feugiat. In fermentum laoreet euismod. Praesent sem nisl, facilisis eget odio at, rhoncus scelerisque ipsum. Nulla orci dui, dignissim a risus ut, lobortis porttitor velit.
+        \n\nNulla id lectus metus. Maecenas a lorem in odio auctor facilisis non vitae nunc. Sed malesuada volutpat massa. Praesent sit amet lacinia augue, mollis tempor dolor.
+    </string>
+
+    <!-- Savoury ==================================================================-->
+    <integer-array name="img_savoury">
+        <item>@drawable/baklava_3</item>
+    </integer-array>
+    <string-array name="str_savoury">
+        <item>Cheese Biscuits</item>
+    </string-array>
+    <string-array name="prc_savoury">
+        <item>5</item>
+    </string-array>
+
+    <!-- Pastries ==================================================================-->
+    <integer-array name="img_pastries">
+        <item>@drawable/baklava_2</item>
+        <item>@drawable/palmier_2</item>
+    </integer-array>
+    <string-array name="str_pastries">
+        <item>Baklava</item>
+        <item>Palmiers</item>
+    </string-array>
+    <string-array name="prc_pastries">
+        <item>7</item>
+        <item>6</item>
+    </string-array>
+
+    <!-- Cakes ==================================================================-->
+    <integer-array name="img_cakes">
+        <item>@drawable/cr_1</item>
+        <item>@drawable/scones_1</item>
+    </integer-array>
+    <string-array name="str_cakes">
+        <item>Cake Rusk</item>
+        <item>Scones</item>
+    </string-array>
+    <string-array name="prc_cakes">
+        <item>5</item>
+        <item>5</item>
+    </string-array>
+
+    <!-- Biscuits ==================================================================-->
+    <integer-array name="img_biscuits">
+        <item>@drawable/biscotti_1</item>
+        <item>@drawable/msb_1</item>
+    </integer-array>
+    <string-array name="str_biscuits">
+        <item>Biscotti</item>
+        <item>Millionaire's Shortbread</item>
+    </string-array>
+    <string-array name="prc_biscuits">
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+</resources>

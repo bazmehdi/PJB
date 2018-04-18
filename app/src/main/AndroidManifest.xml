@@ -5,14 +5,14 @@
     <uses-permission
         android:name="android.permission.INTERNET" />
 
-    <application
+    <application android:name=".data.GlobalVariable"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="PaajeeBakers"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.bazmehdi.pjb.Test">
+        <activity android:name="com.bazmehdi.pjb.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,6 +24,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ItemDetails"
             android:screenOrientation="portrait" />
         <meta-data
             android:name="preloaded_fonts"

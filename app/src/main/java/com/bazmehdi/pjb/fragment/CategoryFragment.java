@@ -46,17 +46,15 @@ public class CategoryFragment extends Fragment {
 
         //set data and list adapter
         List<ItemModel> items = new ArrayList<>();
-        //if(category.equals(getString(R.string.menu_cat1))){
-        //    items = Constant.getItemClothes(getActivity());
-        //}else if(category.equals(getString(R.string.menu_cat2))){
-        //    items = Constant.getItemShoes(getActivity());
-        //}else if(category.equals(getString(R.string.menu_cat3))){
-        //    items = Constant.getItemWatches(getActivity());
-        //}else if(category.equals(getString(R.string.menu_cat4))){
-        //    items = Constant.getItemAccessories(getActivity());
-        //}else if(category.equals(getString(R.string.menu_cat5))){
-        //    items = Constant.getItemBags(getActivity());
-        //}
+        if(category.equals(getString(R.string.menu_cat1))){
+            items = Constant.getSavoury(getActivity());
+        }else if(category.equals(getString(R.string.menu_cat2))){
+            items = Constant.getPastries(getActivity());
+        }else if(category.equals(getString(R.string.menu_cat3))){
+            items = Constant.getCakes(getActivity());
+        }else if(category.equals(getString(R.string.menu_cat4))){
+            items = Constant.getBiscuits(getActivity());
+        }
         mAdapter = new ItemGridAdapter(getActivity(), items);
         recyclerView.setAdapter(mAdapter);
 

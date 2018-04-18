@@ -26,8 +26,8 @@ import java.util.List;
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHolder> implements Filterable {
 
     private final int mBackground;
-    private List<ItemModel> original_items = new ArrayList<>();
-    private List<ItemModel> filtered_items = new ArrayList<>();
+    private List<ItemModel> original_items;
+    private List<ItemModel> filtered_items;
     private ItemFilter mFilter = new ItemFilter();
 
     private final TypedValue mTypedValue = new TypedValue();
@@ -54,12 +54,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
         public ViewHolder(View v) {
             super(v);
-            title = (TextView) v.findViewById(R.id.title);
-            category = (TextView) v.findViewById(R.id.category);
-            price = (TextView) v.findViewById(R.id.price);
-            total = (TextView) v.findViewById(R.id.total);
-            image = (ImageView) v.findViewById(R.id.image);
-            lyt_parent = (MaterialRippleLayout) v.findViewById(R.id.lyt_parent);
+            title = v.findViewById(R.id.title);
+            category = v.findViewById(R.id.category);
+            price = v.findViewById(R.id.price);
+            total = v.findViewById(R.id.total);
+            image = v.findViewById(R.id.image);
+            lyt_parent = v.findViewById(R.id.lyt_parent);
         }
     }
 

@@ -68,7 +68,6 @@ public class ItemDetails extends AppCompatActivity {
         ((TextView) findViewById(R.id.title)).setText(itemModel.getName());
         ((ImageView)findViewById(R.id.image)).setImageResource(itemModel.getImg());
         ((TextView)findViewById(R.id.price)).setText(itemModel.getStrPrice());
-        ((TextView)findViewById(R.id.category)).setText(itemModel.getCategory());
         final Button bt_cart = (Button) findViewById(R.id.bt_cart);
 
         if(global.isCartExist(itemModel)){
@@ -105,8 +104,38 @@ public class ItemDetails extends AppCompatActivity {
         in_cart = false;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            case R.id.action_cart:
+                dialogCartDetails();
+                break;
+            case R.id.action_signOut:
+                Snackbar.make(parent_view, "A Clicked", Snackbar.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_about: {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("About");
+                builder.setMessage(getString(R.string.about_text));
+                builder.setNeutralButton("OK", null);
+                builder.show();
+                break;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item_details, menu);
+        return true;
+    }
+
     public void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -137,7 +166,7 @@ public class ItemDetails extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         ((TextView)dialog.findViewById(R.id.item_total)).setText(" - " + global.getCartItemTotal() + " Items");
         ((TextView)dialog.findViewById(R.id.price_total)).setText(" $ " + global.getCartPriceTotal());
-        ((ImageView)dialog.findViewById(R.id.img_close)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.img_close)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();

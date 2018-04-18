@@ -27,11 +27,8 @@ import com.bazmehdi.pjb.data.GlobalVariable;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.fragment.CartFragment;
 import com.bazmehdi.pjb.fragment.CategoryFragment;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
     private ActionBar actionBar;
-    private Menu menu;
     private View parent_view;
     private GlobalVariable global;
     private NavigationView nav_view;
@@ -71,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -98,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupDrawerLayout() {
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout = findViewById(R.id.drawer_layout);
         nav_view = (NavigationView) findViewById(R.id.navigation_view);
         mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close){
             @Override
@@ -121,6 +117,41 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.action_cart:
+                displayView(R.id.nav_cart, getString(R.string.menu_cart));
+                actionBar.setTitle(R.string.menu_cart);
+                break;
+            case R.id.action_signOut:
+                Snackbar.make(parent_view, "Sign Out Clicked", Snackbar.LENGTH_SHORT).show();
+                break;
+            case R.id.action_about: {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("About");
+                builder.setMessage(getString(R.string.about_text));
+                builder.setNeutralButton("OK", null);
+                builder.show();
+                break;
+            }
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void displayView(int id, String title) {
@@ -159,17 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new CategoryFragment();
                 bundle.putString(CategoryFragment.TAG_CATEGORY, title);
                 break;
-            case R.id.nav_cat5:
-                fragment = new CategoryFragment();
-                bundle.putString(CategoryFragment.TAG_CATEGORY, title);
-                break;
             default:
-                break;
-
-            //sign out menu
-            case R.id.nav_signOut:
-                fragment = new CategoryFragment();
-                bundle.putString(CategoryFragment.TAG_CATEGORY, title);
                 break;
         }
 
@@ -201,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateChartCounter(NavigationView nav, @IdRes int itemId, int count) {
-        TextView view = (TextView) nav.getMenu().findItem(itemId).getActionView().findViewById(R.id.counter);
+        TextView view = nav.getMenu().findItem(itemId).getActionView().findViewById(R.id.counter);
         view.setText(String.valueOf(count));
     }
 

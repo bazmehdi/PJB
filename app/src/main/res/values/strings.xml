@@ -19,15 +19,16 @@
     <string name="menu_account">Account</string>
 
     <string name="menu_cat1">Savoury</string>
-    <string name="menu_cat2">Sweet</string>
-    <string name="menu_cat3">Pastries</string>
-    <string name="menu_cat4">Cakes</string>
-    <string name="menu_cat5">Biscuits</string>
+    <string name="menu_cat2">Pastries</string>
+    <string name="menu_cat3">Cakes</string>
+    <string name="menu_cat4">Biscuits</string>
 
     <string name="menu_signOut">Sign Out</string>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
+    <string name="about_text">About: </string>
 
     <!--exit notification-->
     <string name="press_again_exit_app">Press again to exit</string>
