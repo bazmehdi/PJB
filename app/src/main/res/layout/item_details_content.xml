@@ -130,8 +130,8 @@
                         android:id="@+id/lyt_ingredients"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
                         android:clickable="true"
+                        android:gravity="center_vertical"
                         android:onClick="actionClick"
                         android:orientation="horizontal"
                         android:padding="@dimen/spacing_large">
@@ -147,6 +147,7 @@
                             android:layout_marginLeft="@dimen/spacing_large"
                             android:text="Ingredients"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
                     </LinearLayout>
                 </com.balysv.materialripple.MaterialRippleLayout>
 
@@ -179,34 +180,6 @@
                     </LinearLayout>
                 </com.balysv.materialripple.MaterialRippleLayout>
 
-                <com.balysv.materialripple.MaterialRippleLayout
-                    style="@style/RippleStyleBlack"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/lyt_allergies"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:clickable="true"
-                        android:onClick="actionClick"
-                        android:orientation="horizontal"
-                        android:padding="@dimen/spacing_large">
-
-                        <ImageView
-                            android:layout_width="@dimen/spacing_xlarge"
-                            android:layout_height="@dimen/spacing_xlarge" />
-
-                        <TextView
-                            android:id="@+id/allergies"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/spacing_large"
-                            android:text="Allergies"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-                    </LinearLayout>
-                </com.balysv.materialripple.MaterialRippleLayout>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -15,7 +14,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,7 +66,7 @@ public class ItemDetails extends AppCompatActivity {
         ((TextView) findViewById(R.id.title)).setText(itemModel.getName());
         ((ImageView)findViewById(R.id.image)).setImageResource(itemModel.getImg());
         ((TextView)findViewById(R.id.price)).setText(itemModel.getStrPrice());
-        final Button bt_cart = (Button) findViewById(R.id.bt_cart);
+        final Button bt_cart = findViewById(R.id.bt_cart);
 
         if(global.isCartExist(itemModel)){
             cartRemoveMode(bt_cart);
@@ -154,8 +152,8 @@ public class ItemDetails extends AppCompatActivity {
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
 
-        LinearLayout lyt_notfound = (LinearLayout) dialog.findViewById(R.id.lyt_notfound);
-        RecyclerView recyclerView = (RecyclerView) dialog.findViewById(R.id.recyclerView);
+        LinearLayout lyt_notfound = dialog.findViewById(R.id.lyt_notfound);
+        RecyclerView recyclerView = dialog.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -185,14 +183,20 @@ public class ItemDetails extends AppCompatActivity {
         switch (view.getId()){
             case R.id.lyt_ingredients:
                 Snackbar.make(view, "Ingredients Clicked", Snackbar.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Ingredients");
+                builder.setMessage("Ingredients");
+                builder.setNeutralButton("OK", null);
+                builder.show();
                 break;
             case R.id.lyt_recipe:
                 Snackbar.make(view, "Recipe Clicked", Snackbar.LENGTH_SHORT).show();
+                builder = new AlertDialog.Builder(this);
+                builder.setTitle("Recipe");
+                builder.setMessage("Recipe");
+                builder.setNeutralButton("OK", null);
+                builder.show();
                 break;
-            case R.id.lyt_allergies:
-                Snackbar.make(view, "Allergies Clicked", Snackbar.LENGTH_SHORT).show();
-                break;
-
         }
     }
 

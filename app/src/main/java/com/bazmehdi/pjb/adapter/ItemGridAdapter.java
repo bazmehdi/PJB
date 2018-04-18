@@ -28,8 +28,8 @@ import java.util.List;
 public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHolder> implements Filterable {
 
     private final int mBackground;
-    private List<ItemModel> original_items = new ArrayList<>();
-    private List<ItemModel> filtered_items = new ArrayList<>();
+    private List<ItemModel> original_items;
+    private List<ItemModel> filtered_items;
     private ItemFilter mFilter = new ItemFilter();
 
     private final TypedValue mTypedValue = new TypedValue();
@@ -56,11 +56,11 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
 
         public ViewHolder(View v) {
             super(v);
-            title = (TextView) v.findViewById(R.id.title);
-            category = (TextView) v.findViewById(R.id.category);
-            price = (TextView) v.findViewById(R.id.price);
-            image = (ImageView) v.findViewById(R.id.image);
-            lyt_parent = (RelativeLayout) v.findViewById(R.id.lyt_parent);
+            title = v.findViewById(R.id.title);
+            category = v.findViewById(R.id.category);
+            price = v.findViewById(R.id.price);
+            image = v.findViewById(R.id.image);
+            lyt_parent = v.findViewById(R.id.lyt_parent);
         }
 
     }

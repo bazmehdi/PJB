@@ -19,6 +19,12 @@
     <string-array name="prc_savoury">
         <item>5</item>
     </string-array>
+    <string-array name="ing_savoury">
+        <item>@string/lorem_ipsum</item>
+    </string-array>
+    <string-array name="rec_savoury">
+        <item>@string/lorem_ipsum</item>
+    </string-array>
 
     <!-- Pastries ==================================================================-->
     <integer-array name="img_pastries">
@@ -32,6 +38,36 @@
     <string-array name="prc_pastries">
         <item>7</item>
         <item>6</item>
+    </string-array>
+
+    <string-array name="ing_pastries">
+        <item>•	12 sheets ready-made filo pastry (unwrap and cut them into half and keep under a damp tea-towel until you are ready to use)
+•	150g/5oz unsalted butter, plus extra for greasing
+•	200g/7oz mixed pistachios and walnuts, roughly chopped
+•	2 tbsp granulated sugar
+•	1 tsp ground cardamom
+For the syrup:
+•	300g/10½fl oz granulated sugar
+•	250ml/9fl oz water
+•	1 tbsp lemon juice
+•	1 tbsp orange blossom water
+</item>
+        <item>@string/lorem_ipsum</item>
+    </string-array>
+
+    <string-array name="rec_pastries">
+        <item>1.	Preheat the oven to 180C/350F/Gas 4.
+2.	Grease a 17cm x 28cm (11in x 7in) baking tray with butter.
+3.	Melt the remaining butter in a saucepan over low heat or in a microwave.
+4.	Lay 12 sheets of filo pastry, one at a time, into the tray, brushing each sheet with butter before adding the next.
+5.	In a clean bowl, mix together the nuts, sugar and cardamom and spread the mixture over the pastry in the tray.
+6.	Layer up the remaining sheets on top of the nut mixture, brushing each sheet with butter, as before.
+7.	Using a sharp knife, cut a square or criss-cross pattern into the top layers of the pastry.
+8.	Place baklava in the preheated oven for approximately 20 minutes, then decrease the oven temperature to 150C/300F/Gas 2 and cook for an additional half hour to 40 minutes, or until the pastry is slightly puffed and golden on top. Do not allow the top to burn. Remove and allow to cool slightly.
+9.	For the syrup, heat the sugar, water, lemon juice and orange blossom water in a small, heavy-bottomed saucepan and cook over a medium heat until the sugar has melted and a syrup is formed or until softball temperature. (This will take about 20 minutes or so.)
+10.	Pour the syrup into the slits in the baklava and leave to cool for maybe 5-6 hours. Cut into small square or diamond-shaped pieces and serve.
+</item>
+        <item>@string/lorem_ipsum</item>
     </string-array>
 
     <!-- Cakes ==================================================================-->
@@ -48,6 +84,16 @@
         <item>5</item>
     </string-array>
 
+    <string-array name="ing_cakes">
+        <item>@string/lorem_ipsum</item>
+        <item>@string/lorem_ipsum</item>
+    </string-array>
+
+    <string-array name="rec_cakes">
+        <item>@string/lorem_ipsum</item>
+        <item>@string/lorem_ipsum</item>
+    </string-array>
+
     <!-- Biscuits ==================================================================-->
     <integer-array name="img_biscuits">
         <item>@drawable/biscotti_1</item>
@@ -60,5 +106,58 @@
     <string-array name="prc_biscuits">
         <item>6</item>
         <item>8</item>
+    </string-array>
+
+    <string-array name="ing_biscuits">
+        <item>•	100g whole almonds
+•	200g Plain flour
+•	2 tsp Baking powder
+•	150g caster sugar
+•	2 eggs
+•	1 tsp vanilla extract
+</item>
+        <item>•	125g butter or margarine, softened, plus extra for greasing
+•	50g caster sugar
+•	175g self-raising flour, sifted
+•	175g dark or milk chocolate, broken into pieces
+For the filling:
+•	200g condensed milk
+•	125g butter or margarine
+•	125g caster sugar
+•	2 tbsp golden syrup
+</item>
+    </string-array>
+
+    <string-array name="rec_biscuits">
+        <item>1.	Line a large baking tray with parchment and pre-heat the oven.
+2.	Put the almonds on a baking tray and roast for 4 - 5 minutes in a hot oven.
+3.	Sieve the flour and baking powder into a mixing bowl and stir to combine.
+4.	Add the sugar and roasted almonds and stir to combine.
+5.	Break the eggs into another bowl, add the vanilla and beat together.
+6.	Pour the egg mixture into the mixing bowl and mix into a soft dough.
+7.	Using your hands gather the dough together into a ball.
+8.	Shape the dough into an oval and put it on the prepared tray.
+9.	Flatten the dough slightly.
+10.	Bake oven for 25 - 30 minutes.
+11.	Remove from the oven and leave to cool.
+12.	Cut the biscotti dough into slices 1cm/⅜” thick.
+13.	Lay out the slices on the baking tray and bake for a further 5 - 10 minutes.
+14.	Cool on a wire rack.
+15.	Store the biscotti in an airtight container.
+
+</item>
+        <item>1.	Preheat the oven to 180°C, gas mark 4 and grease an 18 x 28cm tin.
+        2.	To make the base, cream the butter and sugar together in a mixing bowl until light and fluffy.
+        3.	Fold the four into the creamed mixture until well mixed.
+        4.	Press the mixture evenly into the base of the prepared tin and bake in the centre of the preheated oven for about 12 minutes until golden. Meanwhile, make the filling.
+        5.	Place all of the filling ingredients into a saucepan, bring to a gentle boil, then continue to simmer for 5-10 minutes, stirring continuously.
+        6.	You need to stir quite vigorously as little bits of caramel will stick to the pan but should come away easily and dissolve.
+        7.	Once the sugar has dissolved and the mixture has turned a light caramel colour, take the pan off the heat and spread the filling all over the cooked base.
+        8.	Leave to cool.
+        9.	Melt the chocolate in a bowl set over a saucepan of simmering water, making sure the base of the bowl does not touch the water.
+        10.	Stir until the chocolate is completely melted and the pour it over the caramel.
+        11.	Leave to set for 2 hours or until the chocolate is firm.
+        12.	Cut into 12 squares.
+        </item>
     </string-array>
 </resources>
