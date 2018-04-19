@@ -15,6 +15,7 @@ import java.util.Random;
 
 @SuppressWarnings("ResourceType")
 public class Constant {
+
     public static float getAPIVerison() {
 
         Float f = null;

@@ -25,7 +25,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bazmehdi.pjb.adapter.CartListAdapter;
-import com.bazmehdi.pjb.data.Constant;
 import com.bazmehdi.pjb.data.GlobalVariable;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
