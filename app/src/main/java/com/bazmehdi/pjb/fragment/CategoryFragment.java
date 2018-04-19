@@ -20,6 +20,7 @@ import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.adapter.ItemGridAdapter;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
+import com.bazmehdi.pjb.FoodListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,8 +32,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
-import javax.security.auth.callback.Callback;
 
 public class CategoryFragment extends Fragment {
 
@@ -50,11 +49,15 @@ public class CategoryFragment extends Fragment {
     public ArrayList<String> biscuitsPrcArray = new ArrayList<>();
     public ArrayList<String> biscuitsImgArray = new ArrayList<>();
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         db = FirebaseDatabase.getInstance().getReference();
+
+        //FoodListener fl = new FoodListener(this);
+        //db.addChildEventListener(fl);
 
         db.addChildEventListener(new ChildEventListener() {
             @Override
@@ -69,8 +72,6 @@ public class CategoryFragment extends Fragment {
                 Log.d("names list", biscuitsNameArray.toString());
                 Log.d("price list", biscuitsPrcArray.toString());
                 Log.d("image list", biscuitsImgArray.toString());
-
-
 
             }
 
@@ -92,10 +93,9 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-                Log.e("Error","The read failed: " + databaseError.getCode());
-
             }
         });
+
     }
 
     @Nullable
@@ -146,7 +146,7 @@ public class CategoryFragment extends Fragment {
 
     private static Random rnd = new Random();
 
-    public static List<ItemModel> getSavoury(Context ctx) {
+    public List<ItemModel> getSavoury(Context ctx) {
         List<ItemModel> items = new ArrayList<>();
         TypedArray img_s = ctx.getResources().obtainTypedArray((R.array.img_savoury));
         String[] name_s = ctx.getResources().getStringArray(R.array.str_savoury);
@@ -154,7 +154,7 @@ public class CategoryFragment extends Fragment {
         List<Integer> img_s_list = convertToInt(img_s);
         List<String> name_s_list = Arrays.asList(name_s);
         List<String> prc_s_list = Arrays.asList(prc_s);
-        for (int i = 0; i < img_s_list.size(); i++) {
+        for (int i = 0; i <img_s_list.size(); i++) {
             ItemModel item = new ItemModel(Long.parseLong("1" + i), img_s_list.get(i), name_s_list.get(i), Long.parseLong(prc_s_list.get(i)), ctx.getString(R.string.menu_cat1));
             items.add(item);
         }
