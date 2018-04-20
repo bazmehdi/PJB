@@ -1,5 +1,6 @@
 package com.bazmehdi.pjb;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import com.bazmehdi.pjb.data.GlobalVariable;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.fragment.CartFragment;
 import com.bazmehdi.pjb.fragment.CategoryFragment;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -139,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
                 actionBar.setTitle(R.string.menu_cart);
                 break;
             case R.id.action_signOut:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, Login.class));
                 Snackbar.make(parent_view, "Sign Out Clicked", Snackbar.LENGTH_SHORT).show();
                 break;
             case R.id.action_about: {

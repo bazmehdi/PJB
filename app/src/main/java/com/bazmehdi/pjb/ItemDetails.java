@@ -30,9 +30,8 @@ import com.bazmehdi.pjb.data.GlobalVariable;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
 import com.bazmehdi.pjb.widget.DividerItemDecoration;
-import com.bazmehdi.pjb.fragment.CategoryFragment;
-
-import org.w3c.dom.Text;
+import com.bazmehdi.pjb.MainActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ItemDetails extends AppCompatActivity {
 
@@ -121,9 +120,9 @@ public class ItemDetails extends AppCompatActivity {
                 dialogCartDetails();
                 break;
             case R.id.action_signOut:
-                Snackbar.make(parent_view, "A Clicked", Snackbar.LENGTH_SHORT).show();
-                break;
-
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(ItemDetails.this, Login.class));
+                Snackbar.make(parent_view, "Sign Out Clicked", Snackbar.LENGTH_SHORT).show();
             case R.id.action_about: {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("About");
