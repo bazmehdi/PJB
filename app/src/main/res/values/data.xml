@@ -11,24 +11,79 @@
 
     <!-- Savoury ==================================================================-->
     <integer-array name="img_savoury">
-        <item>@drawable/baklava_3</item>
+        <item>@drawable/cheese_2</item>
+        <item>@drawable/cumin_1</item>
+        <item>@drawable/sp_ch_1</item>
     </integer-array>
     <string-array name="str_savoury">
         <item>Cheese Biscuits</item>
+        <item>Cumin Biscuits</item>
+        <item>Spicy Chilli Cheese Twists</item>
     </string-array>
     <string-array name="prc_savoury">
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
+    <string-array name="desc_savoury">
+        <item>Comes in a box of 10</item>
+        <item>Comes in a box of 10</item>
+        <item>Comes in a box of 10</item>
+    </string-array>
+
     <string-array name="ing_savoury">
-        <item>@string/lorem_ipsum</item>
+        <item>
+            •	300g plain flour
+            •	150g salted butter
+            •	150g grated cheddar cheese
+        </item>
+        <item>
+            •	300g plain flour
+            •	175g unsalted butter
+            •	75g caster sugar
+            •	2 tbsp cumin seed
+            •	1 tsp salt
+</item>
+        <item>
+            •	2 sheets rolled puff pastry
+            •	300g cheddar cheese
+            •	As much spicy chilli sauce as one requires
+        </item>
     </string-array>
+
     <string-array name="rec_savoury">
-        <item>@string/lorem_ipsum</item>
+        <item>
+            1.	Preheat oven 190 degrees (fan oven 170 degrees).
+            2.	Mix all ingredients with hand and make dough.
+            3.	Take a handful and roll it to 6mm thick and using biscuit cutter, cut into the shapes you like.
+            4.	Put the onto a baking tray lined with parchment paper.
+            5.	Repeat rolling and cutting until you use all the dough.
+            6.	Put into the oven for about 9 to 11 minutes or until the edges start changing the colour to light brown.
+            7.	Take them out and let them cool for about 5 minutes and then carefully place them onto wire rack and let them cool and then serve.
+        </item>
+        <item>
+            1.	Preheat oven 190 degrees (fan oven 170 degrees).
+            2.	Mix all ingredients with hand and make dough.
+            3.	Take a handful and roll it to 6mm thick and using biscuit cutter, cut into the shapes you like.
+            4.	Put the onto a baking tray lined with parchment paper.
+            5.	Repeat rolling and cutting until you use all the dough.
+            6.	Put into the oven for about 9 to 11 minutes or until the edges start changing the colour to light brown.
+            7.	Take them out and let them cool for about 5 minutes and then carefully place them onto wire rack and let them cool and then serve.
+        </item>
+        <item>
+            1.	Preheat oven 190 degrees (170 degrees fan oven).
+            2.	Take one sheet of rolled pastry sheet and spread chilli sauce as much as you want.
+            3.	Spread grated cheese on top of it.
+            4.	Cover it with second pastry sheet and press it a bit.
+            5.	Cut them in half long side and then cut about 2cm strips. Twist the about 4-5 times and place them onto a baking tray leaving 2cm spaces in between.
+            6.	Place them into the oven for about 10 to 12 minutes or until puffed and change colour to golden brown.
+            7.	Take them out and let them cool and serve.
+        </item>
     </string-array>
 
     <!-- Pastries ==================================================================-->
     <integer-array name="img_pastries">
-        <item>@drawable/baklava_2</item>
+        <item>@drawable/baklava_3</item>
         <item>@drawable/palmier_2</item>
     </integer-array>
     <string-array name="str_pastries">
@@ -39,125 +94,253 @@
         <item>7</item>
         <item>6</item>
     </string-array>
+    <string-array name="desc_pastries">
+        <item>Comes in a box of 10</item>
+        <item>Comes in a box of 10</item>
+    </string-array>
 
     <string-array name="ing_pastries">
-        <item>•	12 sheets ready-made filo pastry (unwrap and cut them into half and keep under a damp tea-towel until you are ready to use)
-•	150g/5oz unsalted butter, plus extra for greasing
-•	200g/7oz mixed pistachios and walnuts, roughly chopped
-•	2 tbsp granulated sugar
-•	1 tsp ground cardamom
-For the syrup:
-•	300g/10½fl oz granulated sugar
-•	250ml/9fl oz water
-•	1 tbsp lemon juice
-•	1 tbsp orange blossom water
-</item>
-        <item>@string/lorem_ipsum</item>
+        <item>
+            •	12 sheets ready-made filo pastry (unwrap and cut them into half and keep under a damp tea-towel until you are ready to use)
+            •	150g/5oz unsalted butter, plus extra for greasing
+            •	200g/7oz mixed pistachios and walnuts, roughly chopped
+            •	2 tbsp granulated sugar
+            •	1 tsp ground cardamom
+            For the syrup:
+            •	300g/10½fl oz granulated sugar
+            •	250ml/9fl oz water
+            •	1 tbsp lemon juice
+            •	1 tbsp orange blossom water
+        </item>
+        <item>
+            @string/lorem_ipsum
+        </item>
     </string-array>
 
     <string-array name="rec_pastries">
-        <item>1.	Preheat the oven to 180C/350F/Gas 4.
-2.	Grease a 17cm x 28cm (11in x 7in) baking tray with butter.
-3.	Melt the remaining butter in a saucepan over low heat or in a microwave.
-4.	Lay 12 sheets of filo pastry, one at a time, into the tray, brushing each sheet with butter before adding the next.
-5.	In a clean bowl, mix together the nuts, sugar and cardamom and spread the mixture over the pastry in the tray.
-6.	Layer up the remaining sheets on top of the nut mixture, brushing each sheet with butter, as before.
-7.	Using a sharp knife, cut a square or criss-cross pattern into the top layers of the pastry.
-8.	Place baklava in the preheated oven for approximately 20 minutes, then decrease the oven temperature to 150C/300F/Gas 2 and cook for an additional half hour to 40 minutes, or until the pastry is slightly puffed and golden on top. Do not allow the top to burn. Remove and allow to cool slightly.
-9.	For the syrup, heat the sugar, water, lemon juice and orange blossom water in a small, heavy-bottomed saucepan and cook over a medium heat until the sugar has melted and a syrup is formed or until softball temperature. (This will take about 20 minutes or so.)
-10.	Pour the syrup into the slits in the baklava and leave to cool for maybe 5-6 hours. Cut into small square or diamond-shaped pieces and serve.
-</item>
-        <item>@string/lorem_ipsum</item>
+        <item>
+            1.	Preheat the oven to 180C/350F/Gas 4.
+            2.	Grease a 17cm x 28cm (11in x 7in) baking tray with butter.
+            3.	Melt the remaining butter in a saucepan over low heat or in a microwave.
+            4.	Lay 12 sheets of filo pastry, one at a time, into the tray, brushing each sheet with butter before adding the next.
+            5.	In a clean bowl, mix together the nuts, sugar and cardamom and spread the mixture over the pastry in the tray.
+            6.	Layer up the remaining sheets on top of the nut mixture, brushing each sheet with butter, as before.
+            7.	Using a sharp knife, cut a square or criss-cross pattern into the top layers of the pastry.
+            8.	Place baklava in the preheated oven for approximately 20 minutes, then decrease the oven temperature to 150C/300F/Gas 2 and cook for an additional half hour to 40 minutes, or until the pastry is slightly puffed and golden on top. Do not allow the top to burn. Remove and allow to cool slightly.
+            9.	For the syrup, heat the sugar, water, lemon juice and orange blossom water in a small, heavy-bottomed saucepan and cook over a medium heat until the sugar has melted and a syrup is formed or until softball temperature. (This will take about 20 minutes or so.)
+            10.	Pour the syrup into the slits in the baklava and leave to cool for maybe 5-6 hours. Cut into small square or diamond-shaped pieces and serve.
+        </item>
+        <item>
+            @string/lorem_ipsum
+        </item>
     </string-array>
 
     <!-- Cakes ==================================================================-->
     <integer-array name="img_cakes">
-        <item>@drawable/cr_1</item>
+        <item>@drawable/cr_2</item>
         <item>@drawable/scones_1</item>
+        <item>@drawable/cup_1</item>
+        <item>@drawable/d_c_1</item>
     </integer-array>
     <string-array name="str_cakes">
         <item>Cake Rusk</item>
         <item>Scones</item>
+        <item>Cupcakes</item>
+        <item>Date and Caramel Cake</item>
     </string-array>
     <string-array name="prc_cakes">
         <item>5</item>
         <item>5</item>
+        <item>5</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="desc_cakes">
+        <item>Comes in a box of 10</item>
+        <item>Comes in a box of 6</item>
+        <item>Comes in a box of 6</item>
+        <item>Comes in a box with a quarter slice</item>
     </string-array>
 
     <string-array name="ing_cakes">
-        <item>@string/lorem_ipsum</item>
-        <item>@string/lorem_ipsum</item>
+        <item>
+            @string/lorem_ipsum
+        </item>
+        <item>
+            @string/lorem_ipsum
+        </item>
+        <item>
+            •	110g softened unsalted butter
+            •	110g golden caster sugar
+            •	110g self raising flour
+            •	2 large eggs
+            •	1/2 tsp vanilla extract
+            For the butter cream:
+            •	150g softened unsalted butter
+            •	300g icing sugar
+            •	1 tsp vanilla extract
+            •	3 tbsp milk
+            •	Food colouring paste of your choice
+        </item>
+        <item>
+            •	1 cup pitted dates
+            •	1 cup boiling water
+            •	1 and 1/2 cup plain flour
+            •	1/2 cup vegetable oil
+            •	2 eggs
+            •	1/2 cup sugar
+            •	1 tsp vanilla essence
+            •	1/2 tsp cinnamon powder
+            •	1/2 tsp baking powder
+            •	Pinch of salt
+            •	Caramel sauce
+            •	1/4 cup sugar
+            •	1 cup double cream
+        </item>
     </string-array>
 
     <string-array name="rec_cakes">
-        <item>@string/lorem_ipsum</item>
-        <item>@string/lorem_ipsum</item>
+        <item>
+            @string/lorem_ipsum
+        </item>
+        <item>
+            @string/lorem_ipsum
+        </item>
+        <item>
+            1.	Heat oven to 180C/160C fan/gas 4 and fill a 12 cupcake tray with cases.
+            2.	Using an electric whisk beat the butter and sugar together until pale and fluffy then whisk in the eggs one at a time, scraping down the sides of the bowl after each addition.
+            3.	Add the vanilla, flour and a pinch of salt, whisk until just combined then spoon the mixture into the cupcake cases.
+            4.	Bake for 15 mins until golden brown and a skewer inserted into the middle of each cake comes out clean.
+            5.	Leave to cool completely on a wire rack.
+            6.	To make the buttercream, whisk the butter until super soft then add the icing sugar, vanilla extract and a pinch of salt.
+            7.	Whisk together until smooth (start off slowly to avoid an icing sugar cloud) then beat in the milk.
+            8.	If wanting to colour, stir in the food colouring now.
+            9.	Spoon or pipe onto the cooled cupcakes.
+        </item>
+        <item>
+            1.	Preheat oven 180 degrees (fan oven 160 degrees).
+            2.	Put dates into boiling water and mash them into paste and set aside to cool a bit.
+            3.	Mix all other ingredients together with a whisk and then put dates mixture and mix together.
+            4.	Put the cake mixture into donut cake tin.
+            5.	Bake it into the oven for about 50 minutes and check by dipping a skewer into the cake if it comes out dry. If not cook for few more minutes until skewer comes out dry.
+            6.	Take the cake out and let it cool in the tin.
+            Prepare sauce:
+            7.	In a small saucepan, combine 1/4 a cup sugar and 3 tbsp water.
+            8.	Bring to a boil on medium-high; let boil 1 minute without stirring.
+            9.	Reduce heat to medium-low and add cream.
+            10.	Return to boil and then simmer until sauce thickly coats the back of a spoon, 1½ to 2 minutes.
+            11.	Remove from heat and let stand 5 minutes.
+            12.	Tip the cooled cake upside down on a plate and pour the caramel sauce on the cake and serve.
+        </item>
     </string-array>
 
     <!-- Biscuits ==================================================================-->
     <integer-array name="img_biscuits">
         <item>@drawable/biscotti_1</item>
         <item>@drawable/msb_1</item>
+        <item>@drawable/coco_1</item>
+        <item>@drawable/sb_1</item>
     </integer-array>
     <string-array name="str_biscuits">
         <item>Biscotti</item>
         <item>Millionaire's Shortbread</item>
+        <item>Coconut Biscuits</item>
+        <item>Shortbread</item>
     </string-array>
     <string-array name="prc_biscuits">
         <item>6</item>
         <item>8</item>
+        <item>5</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="desc_biscuits">
+        <item>Comes in a box of 10</item>
+        <item>Comes in a box of 8</item>
+        <item>Comes in a box of 10</item>
+        <item>Comes in a box of 15</item>
     </string-array>
 
     <string-array name="ing_biscuits">
-        <item>•	100g whole almonds
-•	200g Plain flour
-•	2 tsp Baking powder
-•	150g caster sugar
-•	2 eggs
-•	1 tsp vanilla extract
-</item>
-        <item>•	125g butter or margarine, softened, plus extra for greasing
-•	50g caster sugar
-•	175g self-raising flour, sifted
-•	175g dark or milk chocolate, broken into pieces
-For the filling:
-•	200g condensed milk
-•	125g butter or margarine
-•	125g caster sugar
-•	2 tbsp golden syrup
-</item>
+        <item>
+            •	100g whole almonds
+            •	200g plain flour
+            •	2 tsp baking powder
+            •	150g caster sugar
+            •	2 eggs
+            •	1 tsp vanilla extract
+        </item>
+        <item>
+            •	125g butter or margarine, softened, plus extra for greasing
+            •	50g caster sugar
+            •	175g self-raising flour, sifted
+            •	175g dark or milk chocolate, broken into pieces
+            For the filling:
+            •	200g condensed milk
+            •	125g butter or margarine
+            •	125g caster sugar
+            •	2 tbsp golden syrup
+        </item>
+        <item>
+            •	300g plain flour
+            •	200g unsalted butter
+            •	125g caster sugar
+            •	100g coconut powder
+        </item>
+        <item>
+            •	300g plain flour
+            •	200g salted butter
+            •	100g caster sugar
+        </item>
     </string-array>
 
     <string-array name="rec_biscuits">
-        <item>1.	Line a large baking tray with parchment and pre-heat the oven.
-2.	Put the almonds on a baking tray and roast for 4 - 5 minutes in a hot oven.
-3.	Sieve the flour and baking powder into a mixing bowl and stir to combine.
-4.	Add the sugar and roasted almonds and stir to combine.
-5.	Break the eggs into another bowl, add the vanilla and beat together.
-6.	Pour the egg mixture into the mixing bowl and mix into a soft dough.
-7.	Using your hands gather the dough together into a ball.
-8.	Shape the dough into an oval and put it on the prepared tray.
-9.	Flatten the dough slightly.
-10.	Bake oven for 25 - 30 minutes.
-11.	Remove from the oven and leave to cool.
-12.	Cut the biscotti dough into slices 1cm/⅜” thick.
-13.	Lay out the slices on the baking tray and bake for a further 5 - 10 minutes.
-14.	Cool on a wire rack.
-15.	Store the biscotti in an airtight container.
-
-</item>
-        <item>1.	Preheat the oven to 180°C, gas mark 4 and grease an 18 x 28cm tin.
-        2.	To make the base, cream the butter and sugar together in a mixing bowl until light and fluffy.
-        3.	Fold the four into the creamed mixture until well mixed.
-        4.	Press the mixture evenly into the base of the prepared tin and bake in the centre of the preheated oven for about 12 minutes until golden. Meanwhile, make the filling.
-        5.	Place all of the filling ingredients into a saucepan, bring to a gentle boil, then continue to simmer for 5-10 minutes, stirring continuously.
-        6.	You need to stir quite vigorously as little bits of caramel will stick to the pan but should come away easily and dissolve.
-        7.	Once the sugar has dissolved and the mixture has turned a light caramel colour, take the pan off the heat and spread the filling all over the cooked base.
-        8.	Leave to cool.
-        9.	Melt the chocolate in a bowl set over a saucepan of simmering water, making sure the base of the bowl does not touch the water.
-        10.	Stir until the chocolate is completely melted and the pour it over the caramel.
-        11.	Leave to set for 2 hours or until the chocolate is firm.
-        12.	Cut into 12 squares.
+        <item>
+            1.	Line a large baking tray with parchment and pre-heat the oven.
+            2.	Put the almonds on a baking tray and roast for 4 - 5 minutes in a hot oven.
+            3.	Sieve the flour and baking powder into a mixing bowl and stir to combine.
+            4.	Add the sugar and roasted almonds and stir to combine.
+            5.	Break the eggs into another bowl, add the vanilla and beat together.
+            6.	Pour the egg mixture into the mixing bowl and mix into a soft dough.
+            7.	Using your hands gather the dough together into a ball.
+            8.	Shape the dough into an oval and put it on the prepared tray.
+            9.	Flatten the dough slightly.
+            10.	Bake oven for 25 - 30 minutes.
+            11.	Remove from the oven and leave to cool.
+            12.	Cut the biscotti dough into slices 1cm/⅜” thick.
+            13.	Lay out the slices on the baking tray and bake for a further 5 - 10 minutes.
+            14.	Cool on a wire rack.
+            15.	Store the biscotti in an airtight container.
+        </item>
+        <item>
+            1.	Preheat the oven to 180°C, gas mark 4 and grease an 18 x 28cm tin.
+            2.	To make the base, cream the butter and sugar together in a mixing bowl until light and fluffy.
+            3.	Fold the four into the creamed mixture until well mixed.
+            4.	Press the mixture evenly into the base of the prepared tin and bake in the centre of the preheated oven for about 12 minutes until golden. Meanwhile, make the filling.
+            5.	Place all of the filling ingredients into a saucepan, bring to a gentle boil, then continue to simmer for 5-10 minutes, stirring continuously.
+            6.	You need to stir quite vigorously as little bits of caramel will stick to the pan but should come away easily and dissolve.
+            7.	Once the sugar has dissolved and the mixture has turned a light caramel colour, take the pan off the heat and spread the filling all over the cooked base.
+            8.	Leave to cool.
+            9.	Melt the chocolate in a bowl set over a saucepan of simmering water, making sure the base of the bowl does not touch the water.
+            10.	Stir until the chocolate is completely melted and the pour it over the caramel.
+            11.	Leave to set for 2 hours or until the chocolate is firm.
+            12.	Cut into 12 squares.
+        </item>
+        <item>
+            1.	Preheat oven 190 degrees (fan oven 170 degrees).
+            2.	Mix all ingredients with hand and make dough.
+            3.	Take a handful and roll it to 6mm thick and using biscuit cutter, cut into the shapes you like.
+            4.	Put the onto a baking tray lined with parchment paper.
+            5.	Repeat rolling and cutting until you use all the dough.
+            6.	Put into the oven for about 9 to 11 minutes or until the edges start changing the colour to light brown.
+            7.	Take them out and let them cool for about 5 minutes and then carefully place them onto wire rack and let them cool and then serve.
+        </item>
+        <item>
+            1.	Preheat oven 190 degrees (fan oven 170 degrees.
+            2.	Mix all ingredients together to make dough.
+            3.	Roll about 8mm on a baking tray.
+            4.	Just make Rectangular shape cuts about 1.5x5 cm in size, don’t separate the biscuits.
+            5.	With the fork make 2 lines of holes onto each rectangular biscuit.
+            6.	Put into the oven for about 12 to 14 minutes or until it starts changing the colour to very light brown.
+            7.	Let it cool cut the biscuits and serve.
         </item>
     </string-array>
 </resources>

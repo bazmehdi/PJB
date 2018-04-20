@@ -14,6 +14,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,9 @@ import com.bazmehdi.pjb.data.GlobalVariable;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
 import com.bazmehdi.pjb.widget.DividerItemDecoration;
+import com.bazmehdi.pjb.fragment.CategoryFragment;
+
+import org.w3c.dom.Text;
 
 public class ItemDetails extends AppCompatActivity {
 
@@ -48,8 +52,10 @@ public class ItemDetails extends AppCompatActivity {
     private View parent_view;
     private boolean in_cart=false;
 
+    String text;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_details);
         parent_view = findViewById(android.R.id.content);
@@ -65,6 +71,8 @@ public class ItemDetails extends AppCompatActivity {
         ((TextView) findViewById(R.id.title)).setText(itemModel.getName());
         ((ImageView)findViewById(R.id.image)).setImageResource(itemModel.getImg());
         ((TextView)findViewById(R.id.price)).setText(itemModel.getStrPrice());
+        ((TextView)findViewById(R.id.description)).setText(itemModel.getDescription());
+
         final Button bt_cart = findViewById(R.id.bt_cart);
 
         if(global.isCartExist(itemModel)){
@@ -184,7 +192,7 @@ public class ItemDetails extends AppCompatActivity {
                 Snackbar.make(view, "Ingredients Clicked", Snackbar.LENGTH_SHORT).show();
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Ingredients");
-                builder.setMessage("Ingredients");
+                builder.setMessage(itemModel.getIngredients());
                 builder.setNeutralButton("OK", null);
                 builder.show();
                 break;
@@ -192,7 +200,7 @@ public class ItemDetails extends AppCompatActivity {
                 Snackbar.make(view, "Recipe Clicked", Snackbar.LENGTH_SHORT).show();
                 builder = new AlertDialog.Builder(this);
                 builder.setTitle("Recipe");
-                builder.setMessage("Recipe");
+                builder.setMessage(itemModel.getRecipes());
                 builder.setNeutralButton("OK", null);
                 builder.show();
                 break;

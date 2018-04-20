@@ -20,7 +20,6 @@ import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.adapter.ItemGridAdapter;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
-import com.bazmehdi.pjb.FoodListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -151,11 +150,17 @@ public class CategoryFragment extends Fragment {
         TypedArray img_s = ctx.getResources().obtainTypedArray((R.array.img_savoury));
         String[] name_s = ctx.getResources().getStringArray(R.array.str_savoury);
         String[] prc_s = ctx.getResources().getStringArray(R.array.prc_savoury);
+        String[] desc_s = ctx.getResources().getStringArray(R.array.desc_savoury);
+        String[] ing_s = ctx.getResources().getStringArray(R.array.ing_savoury);
+        String[] rec_s = ctx.getResources().getStringArray(R.array.rec_savoury);
         List<Integer> img_s_list = convertToInt(img_s);
         List<String> name_s_list = Arrays.asList(name_s);
         List<String> prc_s_list = Arrays.asList(prc_s);
+        List<String> desc_s_list = Arrays.asList(desc_s);
+        List<String> ing_s_list = Arrays.asList(ing_s);
+        List<String> rec_s_list = Arrays.asList(rec_s);
         for (int i = 0; i <img_s_list.size(); i++) {
-            ItemModel item = new ItemModel(Long.parseLong("1" + i), img_s_list.get(i), name_s_list.get(i), Long.parseLong(prc_s_list.get(i)), ctx.getString(R.string.menu_cat1));
+            ItemModel item = new ItemModel(Long.parseLong("1" + i), img_s_list.get(i), name_s_list.get(i), Long.parseLong(prc_s_list.get(i)), ctx.getString(R.string.menu_cat1), desc_s_list.get(i), ing_s_list.get(i), rec_s_list.get(i));
             items.add(item);
         }
         Collections.shuffle(items, rnd);
@@ -167,11 +172,17 @@ public class CategoryFragment extends Fragment {
         TypedArray img_p = ctx.getResources().obtainTypedArray(R.array.img_pastries);
         String[] name_p = ctx.getResources().getStringArray(R.array.str_pastries);
         String[] prc_p = ctx.getResources().getStringArray(R.array.prc_pastries);
+        String[] desc_p = ctx.getResources().getStringArray(R.array.desc_pastries);
+        String[] ing_p = ctx.getResources().getStringArray(R.array.ing_pastries);
+        String[] rec_p = ctx.getResources().getStringArray(R.array.rec_pastries);
         List<Integer> img_p_list = convertToInt(img_p);
         List<String> name_p_list = Arrays.asList(name_p);
         List<String> prc_p_list = Arrays.asList(prc_p);
+        List<String> desc_p_list = Arrays.asList(desc_p);
+        List<String> ing_p_list = Arrays.asList(ing_p);
+        List<String> rec_p_list = Arrays.asList(rec_p);
         for (int i = 0; i < img_p_list.size(); i++) {
-            ItemModel item = new ItemModel(Long.parseLong("2" + i), img_p_list.get(i), name_p_list.get(i), Long.parseLong(prc_p_list.get(i)), ctx.getString(R.string.menu_cat2));
+            ItemModel item = new ItemModel(Long.parseLong("2" + i), img_p_list.get(i), name_p_list.get(i), Long.parseLong(prc_p_list.get(i)), ctx.getString(R.string.menu_cat2), desc_p_list.get(i), ing_p_list.get(i), rec_p_list.get(i));
             items.add(item);
         }
         Collections.shuffle(items, rnd);
@@ -183,11 +194,17 @@ public class CategoryFragment extends Fragment {
         TypedArray img_c = ctx.getResources().obtainTypedArray(R.array.img_cakes);
         String[] name_c = ctx.getResources().getStringArray(R.array.str_cakes);
         String[] prc_c = ctx.getResources().getStringArray(R.array.prc_cakes);
+        String[] desc_c = ctx.getResources().getStringArray(R.array.desc_cakes);
+        String[] ing_c = ctx.getResources().getStringArray(R.array.ing_cakes);
+        String[] rec_c = ctx.getResources().getStringArray(R.array.rec_cakes);
         List<Integer> img_c_list = convertToInt(img_c);
         List<String> name_c_list = Arrays.asList(name_c);
         List<String> prc_c_list = Arrays.asList(prc_c);
+        List<String> desc_c_list = Arrays.asList(desc_c);
+        List<String> ing_c_list = Arrays.asList(ing_c);
+        List<String> rec_c_list = Arrays.asList(rec_c);
         for (int i = 0; i < img_c_list.size(); i++) {
-            ItemModel item = new ItemModel(Long.parseLong("3" + i), img_c_list.get(i), name_c_list.get(i), Long.parseLong(prc_c_list.get(i)), ctx.getString(R.string.menu_cat3));
+            ItemModel item = new ItemModel(Long.parseLong("3" + i), img_c_list.get(i), name_c_list.get(i), Long.parseLong(prc_c_list.get(i)), ctx.getString(R.string.menu_cat3), desc_c_list.get(i), ing_c_list.get(i), rec_c_list.get(i));
             items.add(item);
         }
         Collections.shuffle(items, rnd);
@@ -199,11 +216,17 @@ public class CategoryFragment extends Fragment {
         TypedArray img_b = ctx.getResources().obtainTypedArray(R.array.img_biscuits);
         String[] name_b = ctx.getResources().getStringArray(R.array.str_biscuits);
         String[] prc_b = ctx.getResources().getStringArray(R.array.prc_biscuits);
+        String[] desc_b = ctx.getResources().getStringArray(R.array.desc_biscuits);
+        String[] ing_b = ctx.getResources().getStringArray(R.array.ing_biscuits);
+        String[] rec_b = ctx.getResources().getStringArray(R.array.rec_biscuits);
         List<Integer> img_b_list = convertToInt(img_b);
         List<String> name_b_list = Arrays.asList(name_b);
         List<String> prc_b_list = Arrays.asList(prc_b);
+        List<String> desc_b_list = Arrays.asList(desc_b);
+        List<String> ing_b_list = Arrays.asList(ing_b);
+        List<String> rec_b_list = Arrays.asList(rec_b);
         for (int i = 0; i < img_b_list.size(); i++) {
-            ItemModel item = new ItemModel(Long.parseLong("4" + i), img_b_list.get(i), name_b_list.get(i), Long.parseLong(prc_b_list.get(i)), ctx.getString(R.string.menu_cat4));
+            ItemModel item = new ItemModel(Long.parseLong("4" + i), img_b_list.get(i), name_b_list.get(i), Long.parseLong(prc_b_list.get(i)), ctx.getString(R.string.menu_cat4), desc_b_list.get(i), ing_b_list.get(i), rec_b_list.get(i));
             items.add(item);
         }
         Collections.shuffle(items, rnd);

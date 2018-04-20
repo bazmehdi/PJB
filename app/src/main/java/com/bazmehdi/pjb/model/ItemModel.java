@@ -8,14 +8,20 @@ public class ItemModel implements Serializable{
     String name;
     long price;
     String category;
+    String description;
+    String ingredients;
+    String recipes;
     int total=1;
 
-    public ItemModel(long id, int img, String name, long price, String category) {
+    public ItemModel(long id, int img, String name, long price, String category, String description, String ingredients, String recipes) {
         this.id = id;
         this.img = img;
         this.name = name;
         this.price = price;
         this.category = category;
+        this.description = description;
+        this.ingredients = ingredients;
+        this.recipes = recipes;
     }
 
     public long getId() {
@@ -44,6 +50,18 @@ public class ItemModel implements Serializable{
 
     public String getCategory() {
         return category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public String getRecipes() {
+        return recipes;
     }
 
     public int getTotal() {

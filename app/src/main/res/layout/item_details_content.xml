@@ -34,14 +34,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Sample Title"
+                        android:text="Title"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                     <TextView
                         android:id="@+id/price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$ 15"
+                        android:text="£"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
@@ -93,6 +93,7 @@
                 android:padding="@dimen/spacing_large">
 
                 <TextView
+                    android:id="@+id/details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/spacing_middle"
@@ -100,10 +101,11 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <TextView
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Description"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+
                     android:textColor="@color/grey_hard" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
