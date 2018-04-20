@@ -28,9 +28,15 @@
         <activity
             android:name=".ItemDetails"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".PaymentDetails"
+            android:screenOrientation="portrait" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
     </application>
 
 </manifest>

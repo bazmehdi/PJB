@@ -79,6 +79,16 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="£ 500"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="gone" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,6 +110,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:text="PROCEED TO CHECKOUT"
                 android:textColor="@android:color/white" />
+
         </com.balysv.materialripple.MaterialRippleLayout>
     </LinearLayout>
 </LinearLayout>

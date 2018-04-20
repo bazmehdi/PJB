@@ -75,6 +75,8 @@ public class ItemDetails extends AppCompatActivity {
 
         final Button bt_cart = findViewById(R.id.bt_cart);
 
+
+
         if(global.isCartExist(itemModel)){
             cartRemoveMode(bt_cart);
         }

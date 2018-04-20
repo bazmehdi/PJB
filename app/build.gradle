@@ -36,6 +36,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:12.0.1'
     implementation 'com.balysv:material-ripple:1.0.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
 }
 
 apply plugin: 'com.google.gms.google-services'
