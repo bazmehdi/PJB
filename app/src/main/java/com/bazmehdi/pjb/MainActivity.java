@@ -143,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_signOut:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(MainActivity.this, Login.class));
-                Snackbar.make(parent_view, "Sign Out Clicked", Snackbar.LENGTH_SHORT).show();
                 break;
             case R.id.action_about: {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
