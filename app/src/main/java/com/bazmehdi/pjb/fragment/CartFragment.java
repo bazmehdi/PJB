@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -53,7 +52,6 @@ public class CartFragment extends Fragment {
             .clientId(Config.PAYPAL_CLIENT_ID);
 
     String amount = "";
-    ItemModel itemModel;
 
     @Override
     public void onDestroy() {
@@ -85,7 +83,12 @@ public class CartFragment extends Fragment {
         //set data and list adapter
         mAdapter = new CartListAdapter(getActivity(), global.getCart());
         recyclerView.setAdapter(mAdapter);
-
+        mAdapter.SetOnItemClickListener(new CartListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position, ItemModel obj) {
+                dialogCartAction(obj, position);
+            }
+        });
 
         (view.findViewById(R.id.bt_checkout)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +115,56 @@ public class CartFragment extends Fragment {
         amount_total.setText("" + global.getCartPriceTotal());
     }
 
+    private void dialogCartAction(final ItemModel model, final int position) {
+
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.dialog_cart_option);
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        ((TextView) dialog.findViewById(R.id.title)).setText(model.getName());
+        final TextView qty = (TextView) dialog.findViewById(R.id.quantity);
+        qty.setText(model.getTotal() + "");
+        (dialog.findViewById(R.id.img_decrease)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (model.getTotal() > 1) {
+                    model.setTotal(model.getTotal() - 1);
+                    qty.setText(model.getTotal() + "");
+                }
+            }
+        });
+        (dialog.findViewById(R.id.img_increase)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                model.setTotal(model.getTotal() + 1);
+                qty.setText(model.getTotal() + "");
+            }
+        });
+        (dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                global.updateItemTotal(model);
+                mAdapter.notifyDataSetChanged();
+                setTotalPrice();
+                dialog.dismiss();
+            }
+        });
+        (dialog.findViewById(R.id.bt_remove)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                global.removeCart(model);
+                mAdapter.notifyDataSetChanged();
+                setTotalPrice();
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
 
     private void checkoutConfirmation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -122,7 +175,6 @@ public class CartFragment extends Fragment {
             public void onClick(DialogInterface dialogInterface, int i) {
                 global.clearCart();
                 mAdapter.notifyDataSetChanged();
-
                 processPayment();
             }
         });
@@ -131,7 +183,6 @@ public class CartFragment extends Fragment {
     }
 
     private void processPayment(){
-
         amount = amount_total.getText().toString();
         Log.d("amount", amount);
         PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(amount)),"GBP","Buy from PaajeeBakers",PayPalPayment.PAYMENT_INTENT_SALE);
@@ -139,7 +190,6 @@ public class CartFragment extends Fragment {
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
         intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payPalPayment);
         startActivityForResult(intent,PAYPAL_REQUEST_CODE);
-
     }
 
     @Override
