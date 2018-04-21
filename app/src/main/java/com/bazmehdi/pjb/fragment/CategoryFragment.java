@@ -55,9 +55,6 @@ public class CategoryFragment extends Fragment {
 
         db = FirebaseDatabase.getInstance().getReference();
 
-        //FoodListener fl = new FoodListener(this);
-        //db.addChildEventListener(fl);
-
         db.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
