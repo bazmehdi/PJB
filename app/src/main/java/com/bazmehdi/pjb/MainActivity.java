@@ -29,6 +29,7 @@ import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.fragment.CartFragment;
 import com.bazmehdi.pjb.fragment.CategoryFragment;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -65,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Set up the display name and get the Firebase reference
         setupDisplayName();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+        }
 
     }
 
@@ -142,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_signOut:
                 FirebaseAuth.getInstance().signOut();
+                finish();
                 startActivity(new Intent(MainActivity.this, Login.class));
                 break;
             case R.id.action_about: {

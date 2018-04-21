@@ -32,6 +32,7 @@ import com.bazmehdi.pjb.model.ItemModel;
 import com.bazmehdi.pjb.widget.DividerItemDecoration;
 import com.bazmehdi.pjb.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ItemDetails extends AppCompatActivity {
 
@@ -58,6 +59,13 @@ public class ItemDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_details);
         parent_view = findViewById(android.R.id.content);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Intent intent = new Intent(ItemDetails.this, Login.class);
+            finish();
+            startActivity(intent);
+        }
 
         // animation transition
         ViewCompat.setTransitionName(findViewById(R.id.image), EXTRA_OBJCT);
@@ -121,6 +129,7 @@ public class ItemDetails extends AppCompatActivity {
                 break;
             case R.id.action_signOut:
                 FirebaseAuth.getInstance().signOut();
+                finish();
                 startActivity(new Intent(ItemDetails.this, Login.class));
                 break;
             case R.id.action_about: {
