@@ -6,7 +6,9 @@
     <string name="confirm_password_hint">Confirm Password</string>
     <string name="login_btn">Login</string>
     <string name="login_register">Don\'t have an account? Register here!</string>
+    <string name="login_forgotten_pasword">Forgot your password?</string>
     <string name="register_btn">Sign Up</string>
+    <string name="forgot_password_btn">Send</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">Password too short or does not match</string>
     <string name="error_incorrect_password">This password is incorrect</string>

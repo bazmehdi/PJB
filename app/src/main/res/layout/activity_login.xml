@@ -80,6 +80,18 @@
             android:textColor="@android:color/background_light"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/password_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_prompt"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="forgotPassword"
+            android:text="@string/login_forgotten_pasword"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </LinearLayout>

@@ -26,6 +26,9 @@
             android:name=".Register"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ForgotPassword"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ItemDetails"
             android:screenOrientation="portrait" />
         <activity

@@ -60,6 +60,13 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Executed when Register button pressed
+    public void forgotPassword(View v) {
+        Intent intent = new Intent(this, ForgotPassword.class);
+        finish();
+        startActivity(intent);
+    }
+
     // Complete the attemptLogin() method
     private void attemptLogin() {
         String email = mEmailView.getText().toString();
