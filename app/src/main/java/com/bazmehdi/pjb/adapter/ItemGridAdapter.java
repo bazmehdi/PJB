@@ -1,7 +1,6 @@
 package com.bazmehdi.pjb.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -15,11 +14,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bazmehdi.pjb.ItemDetails;
 import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.ItemModel;
-import com.bazmehdi.pjb.widget.RoundedTransformation;
-import com.balysv.materialripple.MaterialRippleLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

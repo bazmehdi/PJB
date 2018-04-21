@@ -6,7 +6,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,7 +22,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bazmehdi.pjb.data.GlobalVariable;
+import com.bazmehdi.pjb.model.CartModel;
 
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.fragment.CartFragment;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private ActionBar actionBar;
     private View parent_view;
-    private GlobalVariable global;
+    private CartModel global;
     private NavigationView nav_view;
 
     @Override
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         parent_view = findViewById(R.id.main_content);
-        global = (GlobalVariable) getApplication();
+        global = (CartModel) getApplication();
 
         initToolbar();
 

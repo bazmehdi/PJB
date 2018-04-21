@@ -1,13 +1,11 @@
-package com.bazmehdi.pjb.data;
+package com.bazmehdi.pjb.model;
 
 import android.app.Application;
-
-import com.bazmehdi.pjb.model.ItemModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GlobalVariable extends Application {
+public class CartModel extends Application {
     private List<ItemModel> cart = new ArrayList<>();
 
     public void addCart(ItemModel model) {

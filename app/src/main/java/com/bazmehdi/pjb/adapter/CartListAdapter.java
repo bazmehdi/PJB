@@ -13,10 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bazmehdi.pjb.ItemDetails;
 import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.ItemModel;
-import com.bazmehdi.pjb.widget.RoundedTransformation;
 import com.balysv.materialripple.MaterialRippleLayout;
 import com.squareup.picasso.Picasso;
 

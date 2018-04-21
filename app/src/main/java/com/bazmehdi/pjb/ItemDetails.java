@@ -1,6 +1,5 @@
 package com.bazmehdi.pjb;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -10,27 +9,17 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bazmehdi.pjb.adapter.CartListAdapter;
-import com.bazmehdi.pjb.data.GlobalVariable;
+import com.bazmehdi.pjb.model.CartModel;
 import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
-import com.bazmehdi.pjb.widget.DividerItemDecoration;
-import com.bazmehdi.pjb.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -48,7 +37,7 @@ public class ItemDetails extends AppCompatActivity {
 
     private ItemModel itemModel;
     private ActionBar actionBar;
-    private GlobalVariable global;
+    private CartModel cartModel;
     private View parent_view;
     private boolean in_cart=false;
 
@@ -70,7 +59,7 @@ public class ItemDetails extends AppCompatActivity {
         // animation transition
         ViewCompat.setTransitionName(findViewById(R.id.image), EXTRA_OBJCT);
 
-        global = (GlobalVariable) getApplication();
+        cartModel = (CartModel) getApplication();
 
         // get extra object
         itemModel = (ItemModel) getIntent().getSerializableExtra(EXTRA_OBJCT);
@@ -84,7 +73,7 @@ public class ItemDetails extends AppCompatActivity {
 
 
 
-        if(global.isCartExist(itemModel)){
+        if(cartModel.isCartExist(itemModel)){
             cartRemoveMode(bt_cart);
         }
 
@@ -92,11 +81,11 @@ public class ItemDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!in_cart){
-                    global.addCart(itemModel);
+                    cartModel.addCart(itemModel);
                     cartRemoveMode(bt_cart);
                     Snackbar.make(view, "Added to Cart", Snackbar.LENGTH_SHORT).show();
                 }else{
-                    global.removeCart(itemModel);
+                    cartModel.removeCart(itemModel);
                     crtAddMode(bt_cart);
                     Snackbar.make(view, "Removed from Cart", Snackbar.LENGTH_SHORT).show();
                 }

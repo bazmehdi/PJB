@@ -23,7 +23,7 @@ import android.widget.Toast;
 import com.bazmehdi.pjb.PaymentDetails;
 import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.adapter.CartListAdapter;
-import com.bazmehdi.pjb.data.GlobalVariable;
+import com.bazmehdi.pjb.model.CartModel;
 import com.bazmehdi.pjb.model.ItemModel;
 import com.bazmehdi.pjb.widget.DividerItemDecoration;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
@@ -40,7 +40,7 @@ import java.math.BigDecimal;
 public class CartFragment extends Fragment {
     private View view;
     private RecyclerView recyclerView;
-    private GlobalVariable global;
+    private CartModel cartModel;
     private CartListAdapter mAdapter;
     private TextView item_total, price_total, amount_total;
     private LinearLayout lyt_notfound;
@@ -63,7 +63,7 @@ public class CartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_cart, null);
-        global = (GlobalVariable) getActivity().getApplication();
+        cartModel = (CartModel) getActivity().getApplication();
 
         item_total = view.findViewById(R.id.item_total);
         price_total = view.findViewById(R.id.price_total);
@@ -81,7 +81,7 @@ public class CartFragment extends Fragment {
         getActivity().startService(intent);
 
         //set data and list adapter
-        mAdapter = new CartListAdapter(getActivity(), global.getCart());
+        mAdapter = new CartListAdapter(getActivity(), cartModel.getCart());
         recyclerView.setAdapter(mAdapter);
         mAdapter.SetOnItemClickListener(new CartListAdapter.OnItemClickListener() {
             @Override
@@ -110,9 +110,9 @@ public class CartFragment extends Fragment {
     }
 
     private void setTotalPrice() {
-        item_total.setText(" - " + global.getCartItemTotal() + " Items");
-        price_total.setText(" £ " + global.getCartPriceTotal());
-        amount_total.setText("" + global.getCartPriceTotal());
+        item_total.setText(" - " + cartModel.getCartItemTotal() + " Items");
+        price_total.setText(" £ " + cartModel.getCartPriceTotal());
+        amount_total.setText("" + cartModel.getCartPriceTotal());
     }
 
     private void dialogCartAction(final ItemModel model, final int position) {
@@ -147,7 +147,7 @@ public class CartFragment extends Fragment {
         (dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                global.updateItemTotal(model);
+                cartModel.updateItemTotal(model);
                 mAdapter.notifyDataSetChanged();
                 setTotalPrice();
                 dialog.dismiss();
@@ -156,7 +156,7 @@ public class CartFragment extends Fragment {
         (dialog.findViewById(R.id.bt_remove)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                global.removeCart(model);
+                cartModel.removeCart(model);
                 mAdapter.notifyDataSetChanged();
                 setTotalPrice();
                 dialog.dismiss();
@@ -173,7 +173,7 @@ public class CartFragment extends Fragment {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                global.clearCart();
+                cartModel.clearCart();
                 mAdapter.notifyDataSetChanged();
                 processPayment();
             }
