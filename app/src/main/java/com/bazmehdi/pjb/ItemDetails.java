@@ -124,9 +124,6 @@ public class ItemDetails extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 break;
-            case R.id.action_cart:
-                dialogCartDetails();
-                break;
             case R.id.action_signOut:
                 FirebaseAuth.getInstance().signOut();
                 finish();
@@ -156,44 +153,6 @@ public class ItemDetails extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle(itemModel.getCategory());
-    }
-
-    private void dialogCartDetails() {
-
-        final Dialog dialog = new Dialog(ItemDetails.this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
-        dialog.setContentView(R.layout.dialog_cart_detail);
-
-        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-        lp.copyFrom(dialog.getWindow().getAttributes());
-        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-
-        LinearLayout lyt_notfound = dialog.findViewById(R.id.lyt_notfound);
-        RecyclerView recyclerView = dialog.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
-
-        //set data and list adapter
-        CartListAdapter mAdapter = new CartListAdapter(this, global.getCart());
-        recyclerView.setAdapter(mAdapter);
-        ((TextView)dialog.findViewById(R.id.item_total)).setText(" - " + global.getCartItemTotal() + " Items");
-        ((TextView)dialog.findViewById(R.id.price_total)).setText(" £ " + global.getCartPriceTotal());
-        (dialog.findViewById(R.id.img_close)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-        if(mAdapter.getItemCount()==0){
-            lyt_notfound.setVisibility(View.VISIBLE);
-        }else{
-            lyt_notfound.setVisibility(View.GONE);
-        }
-        dialog.show();
-        dialog.getWindow().setAttributes(lp);
     }
 
     public void actionClick(View view){

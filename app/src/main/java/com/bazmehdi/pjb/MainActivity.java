@@ -142,10 +142,6 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
-            case R.id.action_cart:
-                displayView(R.id.nav_cart, getString(R.string.menu_cart));
-                actionBar.setTitle(R.string.menu_cart);
-                break;
             case R.id.action_signOut:
                 FirebaseAuth.getInstance().signOut();
                 finish();
