@@ -1,4 +1,4 @@
-package com.bazmehdi.pjb;
+package com.bazmehdi.pjb.view;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,6 +13,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bazmehdi.pjb.R;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,7 +57,7 @@ public class Login extends AppCompatActivity {
 
     // Executed when Register button pressed
     public void registerNewUser(View v) {
-        Intent intent = new Intent(this, com.bazmehdi.pjb.Register.class);
+        Intent intent = new Intent(this, Register.class);
         finish();
         startActivity(intent);
     }
@@ -104,5 +106,4 @@ public class Login extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-
 }

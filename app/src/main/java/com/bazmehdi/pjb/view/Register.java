@@ -1,4 +1,4 @@
-package com.bazmehdi.pjb;
+package com.bazmehdi.pjb.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +15,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bazmehdi.pjb.R;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -25,7 +27,6 @@ public class Register extends AppCompatActivity {
     static final String APP_PREFS = "AppPrefs";
     static final String DISPLAY_NAME_KEY = "username";
 
-    // TODO: Add member variables here:
     // UI references.
     private AutoCompleteTextView mUsernameView;
     private AutoCompleteTextView mEmailView;
@@ -58,7 +59,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        // TODO: Get hold of an instance of FirebaseAuth
+        // Gets hold of an instance of FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
 
     }
@@ -100,13 +101,11 @@ public class Register extends AppCompatActivity {
         }
 
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
+            // There was an error so this doesn't attempt login and instead focuses the first form field with an error.
             focusView.requestFocus();
         } else {
-            // TODO: Call create FirebaseUser() here
+            // Creates the user here
             createFirebaseUser();
-
         }
     }
 
@@ -123,8 +122,6 @@ public class Register extends AppCompatActivity {
     private void createFirebaseUser() {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-
-
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this,
                 new OnCompleteListener<AuthResult>() {
@@ -146,23 +143,20 @@ public class Register extends AppCompatActivity {
                 });
     }
 
-    // TODO: Save the display name to Shared Preferences
+    // Save the display name to Shared Preferences
     private void saveDisplayName() {
         String displayName = mUsernameView.getText().toString();
         SharedPreferences prefs = getSharedPreferences(APP_PREFS, 0);
         prefs.edit().putString(DISPLAY_NAME_KEY, displayName).apply();
     }
 
-    // TODO: Create an alert dialog to show in case registration failed
+    // Show error on screen with an alert dialog
     private void showErrorDialog(String message){
-
         new AlertDialog.Builder(this)
                 .setTitle("Error")
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
-
     }
-
 }

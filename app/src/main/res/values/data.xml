@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
-    \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
-    <string name="short_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
-    <string name="middle_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
-    <string name="long_lorem_ipsum">
-        Duis tellus metus, elementum a lectus id, aliquet interdum mauris. Nam bibendum efficitur sollicitudin. Proin eleifend libero velit, nec fringilla dolor finibus quis. nMorbi eu libero pellentesque, rutrum metus quis, blandit est. Fusce bibendum accumsan nisi vulputate feugiat. In fermentum laoreet euismod. Praesent sem nisl, facilisis eget odio at, rhoncus scelerisque ipsum. Nulla orci dui, dignissim a risus ut, lobortis porttitor velit.
-        \n\nNulla id lectus metus. Maecenas a lorem in odio auctor facilisis non vitae nunc. Sed malesuada volutpat massa. Praesent sit amet lacinia augue, mollis tempor dolor.
-    </string>
-
     <!-- Savoury ==================================================================-->
     <integer-array name="img_savoury">
         <item>@drawable/cheese_2</item>
@@ -113,7 +104,8 @@
             •	1 tbsp orange blossom water
         </item>
         <item>
-            @string/lorem_ipsum
+            •	1 puff pastry sheet
+            •	Granulated sugar enough to spread
         </item>
     </string-array>
 
@@ -131,7 +123,16 @@
             10.	Pour the syrup into the slits in the baklava and leave to cool for maybe 5-6 hours. Cut into small square or diamond-shaped pieces and serve.
         </item>
         <item>
-            @string/lorem_ipsum
+            1.	Preheat oven 190 degrees (170 degrees fan oven).
+            2.	Take a puff pastry sheet and sprinkle sugar evenly on the pastry.
+            3.	Now fold in two opposite sides of the pastry sheet so that the sides meet in the centre.
+            4.	Now sprinkle more sugar and fold both sides together and sprinkle more sugar on both sides.
+            5.	Leave the pastry in fridge to chill for 15 minutes so that it is easy to cut.
+            6.	Take out the pastry from fridge and cut it crosswise into 1/2 inch slices.
+            7.	Dip the cut sides of slices in sugar and place them on a baking tray lined with parchment paper 3-4 inch apart to give space for them to spread.
+            8.	Bake them in the oven for about 10 minutes or until golden brown.
+            9.	Remove from oven and leave them on wire rake to cool completely and then serve.
+            10.	Tip: instead of granulated sugar, you can use golden caster sugar with cinnamon powder for a different taste.
         </item>
     </string-array>
 
@@ -163,10 +164,19 @@
 
     <string-array name="ing_cakes">
         <item>
-            @string/lorem_ipsum
+            •	1 tsp baking powder
+            •	½ cup unsalted butter, at room temperature
+            •	½ cup granulated white sugar
+            •	½ tsp vanilla extract
+            •	2 eggs, at room temperature
         </item>
         <item>
-            @string/lorem_ipsum
+            •	225g/8oz self raising flour
+            •	A pinch of salt
+            •	55g/2oz butte
+            •	25g/1oz caster sugar
+            •	150ml/5fl oz milk
+            •	1 free-range egg, beaten, to glaze (alternatively, use a little milk)
         </item>
         <item>
             •	110g softened unsalted butter
@@ -200,10 +210,37 @@
 
     <string-array name="rec_cakes">
         <item>
-            @string/lorem_ipsum
+            1.	Preheat oven to 180 degrees.
+            2.	In a bowl, sift together all-purpose flour and baking powder. Set aside.
+            3.	Using your stand or hand mixer, beat the room temperature butter till it becomes soft and creamy.
+            4.	Add sugar gradually and cream the butter and sugar together till it becomes smooth and creamy.
+            5.	Add in the eggs, one by one and beat the whole mixture till it comes to a smooth consistency.
+            6.	Add in the vanilla extract and mix.
+            7.	Now add the flour and baking powder slowly into wet ingredients.
+            8.	Beat the mixture for 2 minutes till it looks smooth.
+            9.	Pour the batter into a 8 x 8 square cake pan.
+            10.	Bake the cake at 180 degrees for 40 minutes. Dip the skewer in the cake and it should come out dry. If not, leave the cake in the oven until skewer comes out dry.
+            11.	Take the cake out of the oven and allow it to cool for 10 minutes and then cut into 1cm slices. [Cut the cake once from the centre and then into slices] The rusks will be soft at this point of time.
+            12.	Now reduce the temperature of the oven to 140 degrees.
+            13.	Arrange the slices on a baking tray, leaving some space between them.
+            14.	Put the tray into the oven and bake at 140 degrees for 10 minutes.
+            15.	After 10 minutes, take out the tray and flip the rusks to bake the other side.
+            16.	Put the tray back into the oven and bake again for 10 minutes.
+            17.	Each side should appear golden brown after the 2nd bake.
+            18.	Allow the cake rusks to cool completely.
+            19.	Once cooled, the rusks will be crunchy and crispy. Store them in airtight container.
+            20.	Enjoy the cake rusks with hot cup of tea!
         </item>
         <item>
-            @string/lorem_ipsum
+            1.	Heat the oven to 220C/425F/Gas 7. Lightly grease a baking sheet.
+            2.	Mix together the flour and salt and rub in the butter.
+            3.	Stir in the sugar and then the milk to get a soft dough.
+            4.	Turn on to a floured work surface and knead very lightly.
+            5.	Pat out to a round 2cm/¾in thick. Use a 5cm/2in cutter to stamp out rounds and place on a baking sheet.
+            6.	Lightly knead together the rest of the dough and stamp out more scones to use it all up.
+            7.	Brush the tops of the scones with the beaten egg.
+            8.	Bake for 12-15 minutes until well risen and golden.
+            9.	Cool on a wire rack and serve with butter and good jam and maybe some clotted cream.
         </item>
         <item>
             1.	Heat oven to 180C/160C fan/gas 4 and fill a 12 cupcake tray with cases.

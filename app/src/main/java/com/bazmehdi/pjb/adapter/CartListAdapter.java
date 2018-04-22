@@ -1,7 +1,6 @@
 package com.bazmehdi.pjb.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -10,13 +9,13 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.ItemModel;
-import com.balysv.materialripple.MaterialRippleLayout;
-import com.squareup.picasso.Picasso;
+
+import com.balysv.materialripple.MaterialRippleLayout; // Ripple effect wrapper for Android views at: https://github.com/balysv/material-ripple
+import com.squareup.picasso.Picasso; // Image-loading and caching library at: https://github.com/square/picasso
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +27,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     private List<ItemModel> filtered_items;
     private ItemFilter mFilter = new ItemFilter();
 
+
     private final TypedValue mTypedValue = new TypedValue();
 
     private Context ctx;
@@ -37,12 +37,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         void onItemClick(View view, int position, ItemModel obj);
     }
 
-    public void SetOnItemClickListener(final OnItemClickListener mItemClickListener) {
+    public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
         this.mOnItemClickListener = mItemClickListener;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+        // Each data item is just a string in this case
         public TextView title;
         public TextView category;
         public TextView price;
@@ -61,11 +61,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         }
     }
 
+    // Returns a filter, in this case being mFilter of type ItemFilter
     public Filter getFilter() {
         return mFilter;
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
+    // Constructor
     public CartListAdapter(Context ctx, List<ItemModel> items) {
         this.ctx = ctx;
         original_items = items;
@@ -76,26 +77,26 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public CartListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // create a new view
+        // Create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart, parent, false);
         v.setBackgroundResource(mBackground);
-        // set the view's size, margins, paddings and layout parameters
+        // Set the views' size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
+    // Replace the contents of a view
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final ItemModel p = filtered_items.get(position);
         holder.title.setText(p.getName());
         holder.category.setText(p.getCategory());
-        holder.total.setText(p.getTotal()+" X");
+        holder.total.setText(p.getTotal() + " X");
         holder.price.setText(p.getStrPrice());
         Picasso.with(ctx).load(p.getImg())
-                .resize(100,100)
+                .resize(100, 100)
                 .into(holder.image);
-        // view detail message conversation
+        // View detail message conversation
         holder.lyt_parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,17 +107,19 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         });
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
+    // Return the size of your dataset
     @Override
     public int getItemCount() {
         return filtered_items.size();
     }
 
+    // Return the position of each item in the dataset
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    // Performs the actual filtering
     private class ItemFilter extends Filter {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -140,10 +143,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
             return results;
         }
 
+        // Publishes the filtered results to the UI
         @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             filtered_items = (List<ItemModel>) results.values;
             notifyDataSetChanged();
         }
-    }}
+    }
+}

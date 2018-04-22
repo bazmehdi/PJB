@@ -20,14 +20,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bazmehdi.pjb.PaymentDetails;
+import com.bazmehdi.pjb.view.PaymentDetails;
 import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.adapter.CartListAdapter;
 import com.bazmehdi.pjb.model.CartModel;
 import com.bazmehdi.pjb.model.ItemModel;
 import com.bazmehdi.pjb.widget.DividerItemDecoration;
-import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.bazmehdi.pjb.config.Config;
+
+import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
@@ -45,13 +46,13 @@ public class CartFragment extends Fragment {
     private TextView item_total, price_total, amount_total;
     private LinearLayout lyt_notfound;
 
+    String amount = "";
+
     public static final int PAYPAL_REQUEST_CODE = 7171;
 
     private static PayPalConfiguration config = new PayPalConfiguration()
-            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX) //use SANDBOX
+            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX) // Using SANDBOX for now, to go live have to use ENVIRONMENT_PRODUCTION
             .clientId(Config.PAYPAL_CLIENT_ID);
-
-    String amount = "";
 
     @Override
     public void onDestroy() {
@@ -80,10 +81,10 @@ public class CartFragment extends Fragment {
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
         getActivity().startService(intent);
 
-        //set data and list adapter
+        //Set data and list adapter
         mAdapter = new CartListAdapter(getActivity(), cartModel.getCart());
         recyclerView.setAdapter(mAdapter);
-        mAdapter.SetOnItemClickListener(new CartListAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new CartListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, ItemModel obj) {
                 dialogCartAction(obj, position);
@@ -109,12 +110,14 @@ public class CartFragment extends Fragment {
         return view;
     }
 
+    // Getting cart data by calling CartModel
     private void setTotalPrice() {
         item_total.setText(" - " + cartModel.getCartItemTotal() + " Items");
         price_total.setText(" £ " + cartModel.getCartPriceTotal());
         amount_total.setText("" + cartModel.getCartPriceTotal());
     }
 
+    // Dialog box to add and remove items to cart
     private void dialogCartAction(final ItemModel model, final int position) {
 
         final Dialog dialog = new Dialog(getActivity());
@@ -166,6 +169,7 @@ public class CartFragment extends Fragment {
         dialog.getWindow().setAttributes(lp);
     }
 
+    // Checkout button
     private void checkoutConfirmation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Checkout Confirmation");
@@ -182,6 +186,7 @@ public class CartFragment extends Fragment {
         builder.show();
     }
 
+    // PayPal SDK
     private void processPayment(){
         amount = amount_total.getText().toString();
         Log.d("amount", amount);
@@ -192,6 +197,7 @@ public class CartFragment extends Fragment {
         startActivityForResult(intent,PAYPAL_REQUEST_CODE);
     }
 
+    //
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PAYPAL_REQUEST_CODE) {

@@ -16,12 +16,13 @@ import android.widget.TextView;
 
 import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.ItemModel;
-import com.squareup.picasso.Picasso;
+
+import com.squareup.picasso.Picasso; // Image-loading and caching library at: https://github.com/square/picasso
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHolder> implements Filterable {
+public class CategoryItemGridAdapter extends RecyclerView.Adapter<CategoryItemGridAdapter.ViewHolder> implements Filterable {
 
     private final int mBackground;
     private List<ItemModel> original_items;
@@ -33,7 +34,7 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
     private Context ctx;
     private boolean clicked = false;
 
-    // for item click listener
+    // For item click listener
     private OnItemClickListener mOnItemClickListener;
     public interface OnItemClickListener {
         void onItemClick(View view, ItemModel obj, int position);
@@ -43,7 +44,7 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+        // Each data item is just a string in this case
         public TextView title;
         public TextView category;
         public TextView price;
@@ -58,15 +59,15 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
             image = v.findViewById(R.id.image);
             lyt_parent = v.findViewById(R.id.lyt_parent);
         }
-
     }
 
+    // Returns a filter, in this case being mFilter of type ItemFilter
     public Filter getFilter() {
         return mFilter;
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public ItemGridAdapter(Context ctx, List<ItemModel> items) {
+    // Constructor
+    public CategoryItemGridAdapter(Context ctx, List<ItemModel> items) {
         this.ctx = ctx;
         original_items = items;
         filtered_items = items;
@@ -75,7 +76,7 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
     }
 
     @Override
-    public ItemGridAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CategoryItemGridAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid, parent, false);
         v.setBackgroundResource(mBackground);
@@ -84,7 +85,7 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
+    // Replace the contents of a view
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final ItemModel p = filtered_items.get(position);
@@ -105,13 +106,11 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
                 }
             }
         });
-
         clicked = false;
     }
 
-    /**
-     * Here is the key method to apply the animation
-     */
+
+    // Here is the key method to apply the animation
     private int lastPosition = -1;
     private void setAnimation(View viewToAnimate, int position) {
         // If the bound view wasn't previously displayed on screen, it's animated
@@ -122,17 +121,19 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
         }
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
+    // Return the size of your dataset
     @Override
     public int getItemCount() {
         return filtered_items.size();
     }
 
+    // Return the position of each item in the dataset
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    // Performs the actual filtering
     private class ItemFilter extends Filter {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -156,12 +157,12 @@ public class ItemGridAdapter extends RecyclerView.Adapter<ItemGridAdapter.ViewHo
             return results;
         }
 
+        // Publishes the filtered results to the UI
         @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             filtered_items = (List<ItemModel>) results.values;
             notifyDataSetChanged();
         }
-
     }
 }

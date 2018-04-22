@@ -11,6 +11,7 @@ public class CartModel extends Application {
     public void addCart(ItemModel model) {
         cart.add(model);
     }
+
     public void removeCart(ItemModel model) {
         for (int i = 0; i < cart.size(); i++) {
             if(cart.get(i).getId()==model.getId()){
@@ -19,12 +20,15 @@ public class CartModel extends Application {
             }
         }
     }
+
     public void clearCart() {
         cart.clear();
     }
+
     public List<ItemModel> getCart() {
         return cart;
     }
+
     public long getCartPriceTotal() {
         long total = 0;
         for (int i = 0; i < cart.size(); i++) {
@@ -32,6 +36,7 @@ public class CartModel extends Application {
         }
         return total;
     }
+
     public int getCartItemTotal() {
         int total = 0;
         for (int i = 0; i < cart.size(); i++) {
@@ -39,9 +44,11 @@ public class CartModel extends Application {
         }
         return total;
     }
+
     public int getCartItem() {
         return cart.size();
     }
+
     public void updateItemTotal(ItemModel model) {
         for (int i = 0; i < cart.size(); i++) {
             if(cart.get(i).getId()==model.getId()){

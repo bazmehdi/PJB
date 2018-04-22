@@ -1,7 +1,6 @@
-package com.bazmehdi.pjb;
+package com.bazmehdi.pjb.view;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -22,20 +21,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.CartModel;
 
-import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.fragment.CartFragment;
 import com.bazmehdi.pjb.fragment.CategoryFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String mDisplayName;
-    private DatabaseReference mDatabaseReference;
     private DrawerLayout drawerLayout;
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -55,22 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
         setupDrawerLayout();
 
-        // display first page
+        // Display first page
         displayView(R.id.nav_cart, getString(R.string.menu_cart));
         actionBar.setTitle(R.string.menu_cart);
 
-        // for system bar in lollipop
-        Tools.systemBarLollipop(this);
-
-        // TODO: Set up the display name and get the Firebase reference
-        setupDisplayName();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        // Checks to see if user is logged in
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
             Intent intent = new Intent(MainActivity.this, Login.class);
             startActivity(intent);
         }
-
     }
 
     private void initToolbar() {
@@ -79,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-
     }
 
     @Override
@@ -102,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupDrawerLayout() {
         drawerLayout = findViewById(R.id.drawer_layout);
-        nav_view = (NavigationView) findViewById(R.id.navigation_view);
+        nav_view = findViewById(R.id.navigation_view);
         mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close){
             @Override
             public void onDrawerOpened(View drawerView) {
@@ -155,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -167,14 +154,6 @@ public class MainActivity extends AppCompatActivity {
         switch (id) {
             case R.id.nav_cart:
                 fragment = new CartFragment();
-                break;
-            case R.id.nav_location:
-                fragment = new CategoryFragment();
-                bundle.putString(CategoryFragment.TAG_CATEGORY, title);
-                break;
-            case R.id.nav_account:
-                fragment = new CategoryFragment();
-                bundle.putString(CategoryFragment.TAG_CATEGORY, title);
                 break;
 
 
@@ -206,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.frame_content, fragment);
             fragmentTransaction.commit();
-            //initToolbar();
         }
     }
 
@@ -230,16 +208,4 @@ public class MainActivity extends AppCompatActivity {
         TextView view = nav.getMenu().findItem(itemId).getActionView().findViewById(R.id.counter);
         view.setText(String.valueOf(count));
     }
-
-
-    // TODO: Retrieve the display name from the Shared Preferences
-    private void setupDisplayName(){
-
-        SharedPreferences prefs = getSharedPreferences(Register.APP_PREFS, MODE_PRIVATE);
-
-        mDisplayName = prefs.getString(Register.DISPLAY_NAME_KEY, null);
-
-        if (mDisplayName == null) mDisplayName = "Anonymous";
-    }
-
 }

@@ -1,9 +1,11 @@
-package com.bazmehdi.pjb;
+package com.bazmehdi.pjb.view;
 
 import android.os.Bundle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.bazmehdi.pjb.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +32,6 @@ public class PaymentDetails extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 
     private void showDetails(JSONObject response, String pAmount) {

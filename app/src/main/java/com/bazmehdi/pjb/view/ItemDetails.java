@@ -1,4 +1,4 @@
-package com.bazmehdi.pjb;
+package com.bazmehdi.pjb.view;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -17,9 +17,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bazmehdi.pjb.R;
 import com.bazmehdi.pjb.model.CartModel;
-import com.bazmehdi.pjb.data.Tools;
 import com.bazmehdi.pjb.model.ItemModel;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -27,7 +28,7 @@ public class ItemDetails extends AppCompatActivity {
 
     public static final String EXTRA_OBJCT = "com.bazmehdi.pjb.ITEM";
 
-    // give preparation animation activity transition
+    // Give preparation animation activity transition
     public static void navigate(AppCompatActivity activity, View transitionImage, ItemModel obj) {
         Intent intent = new Intent(activity, ItemDetails.class);
         intent.putExtra(EXTRA_OBJCT, obj);
@@ -41,14 +42,13 @@ public class ItemDetails extends AppCompatActivity {
     private View parent_view;
     private boolean in_cart=false;
 
-    String text;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_details);
         parent_view = findViewById(android.R.id.content);
 
+        // Checks to see if user is logged in
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
             Intent intent = new Intent(ItemDetails.this, Login.class);
@@ -56,12 +56,12 @@ public class ItemDetails extends AppCompatActivity {
             startActivity(intent);
         }
 
-        // animation transition
+        // Animation transition
         ViewCompat.setTransitionName(findViewById(R.id.image), EXTRA_OBJCT);
 
         cartModel = (CartModel) getApplication();
 
-        // get extra object
+        // Get extra object
         itemModel = (ItemModel) getIntent().getSerializableExtra(EXTRA_OBJCT);
         initToolbar();
         ((TextView) findViewById(R.id.title)).setText(itemModel.getName());
@@ -70,8 +70,6 @@ public class ItemDetails extends AppCompatActivity {
         ((TextView)findViewById(R.id.description)).setText(itemModel.getDescription());
 
         final Button bt_cart = findViewById(R.id.bt_cart);
-
-
 
         if(cartModel.isCartExist(itemModel)){
             cartRemoveMode(bt_cart);
@@ -91,9 +89,6 @@ public class ItemDetails extends AppCompatActivity {
                 }
             }
         });
-
-        // for system bar in lollipop
-        Tools.systemBarLollipop(this);
     }
 
     private void cartRemoveMode(Button bt){
@@ -101,6 +96,7 @@ public class ItemDetails extends AppCompatActivity {
         bt.setBackgroundColor(getResources().getColor(R.color.colorRed));
         in_cart = true;
     }
+
     private void crtAddMode(Button bt){
         bt.setText("ADD TO CART");
         bt.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
@@ -129,6 +125,7 @@ public class ItemDetails extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_item_details, menu);
@@ -164,6 +161,5 @@ public class ItemDetails extends AppCompatActivity {
                 break;
         }
     }
-
 }
 
