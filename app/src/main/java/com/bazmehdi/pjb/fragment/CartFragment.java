@@ -173,7 +173,7 @@ public class CartFragment extends Fragment {
     private void checkoutConfirmation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Checkout Confirmation");
-        builder.setMessage("Are you sure continue to checkout?");
+        builder.setMessage("Are you sure you want to checkout?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
