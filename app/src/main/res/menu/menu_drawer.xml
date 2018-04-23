@@ -18,18 +18,22 @@
                 <item
                     android:id="@+id/nav_cat1"
 
+                    android:icon="@drawable/ic_savoury"
                     android:title="@string/menu_cat1" />
                 <item
                     android:id="@+id/nav_cat2"
 
+                    android:icon="@drawable/ic_pastries"
                     android:title="@string/menu_cat2" />
                 <item
                     android:id="@+id/nav_cat3"
 
+                    android:icon="@drawable/ic_cakes"
                     android:title="@string/menu_cat3" />
                 <item
                     android:id="@+id/nav_cat4"
 
+                    android:icon="@drawable/ic_biscuits"
                     android:title="@string/menu_cat4" />
             </group>
         </menu>

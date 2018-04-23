@@ -29,14 +29,16 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         a.recycle();
         setOrientation(orientation);
     }
- 
+
+    // Checks for valid orientation
     public void setOrientation(int orientation) {
         if (orientation != HORIZONTAL_LIST && orientation != VERTICAL_LIST) {
             throw new IllegalArgumentException("invalid orientation");
         }
         mOrientation = orientation;
     }
- 
+
+    // Calls the right method depending on the orientation
     @Override
     public void onDraw(Canvas c, RecyclerView parent) {
         if (mOrientation == VERTICAL_LIST) {

@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/spacing_middle"
-                    android:text="Details"
+                    android:text="Description"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <TextView
@@ -140,7 +140,8 @@
 
                         <ImageView
                             android:layout_width="@dimen/spacing_xlarge"
-                            android:layout_height="@dimen/spacing_xlarge" />
+                            android:layout_height="@dimen/spacing_xlarge"
+                            android:src="@drawable/ic_ingredients" />
 
                         <TextView
                             android:id="@+id/ingredients"
@@ -170,7 +171,8 @@
 
                         <ImageView
                             android:layout_width="@dimen/spacing_xlarge"
-                            android:layout_height="@dimen/spacing_xlarge" />
+                            android:layout_height="@dimen/spacing_xlarge"
+                            android:src="@drawable/ic_recipe" />
 
                         <TextView
                             android:id="@+id/recipe"
