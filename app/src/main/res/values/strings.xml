@@ -30,7 +30,7 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
-    <string name="about_text">About: </string>
+    <string name="about_text">PaajeeBakers created by Basim Hassan Mehdi, 2018</string>
 
     <!--exit notification-->
     <string name="press_again_exit_app">Press again to exit</string>
