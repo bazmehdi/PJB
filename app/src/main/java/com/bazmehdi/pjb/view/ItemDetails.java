@@ -40,7 +40,7 @@ public class ItemDetails extends AppCompatActivity {
     private ActionBar actionBar;
     private CartModel cartModel;
     private View parent_view;
-    private boolean in_cart=false;
+    private boolean in_cart = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
